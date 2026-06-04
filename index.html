@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SoloPropinas | Cobra sí o sí tus propinas</title>
+  <meta name="description" content="Creá tu QR único sin vencimiento y empezá a cobrar propinas digitales al instante." />
+  <meta property="og:title" content="SoloPropinas | Cobra sí o sí tus propinas" />
+  <meta property="og:description" content="Tu QR único para recibir propinas digitales sin fricción." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#111827" />
+  <style>
+    :root{
+      --bg:#fffaf3;
+      --ink:#111827;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --line:#efe5d6;
+      --accent:#ff7a1a;
+      --accent-2:#ffd7b5;
+      --green:#16a34a;
+      --shadow:0 24px 70px rgba(17,24,39,.12);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,250,243,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(239,229,214,.75)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.03em;font-size:22px}
+    .logo{width:38px;height:38px;border-radius:14px;background:var(--ink);display:grid;place-items:center;color:white;box-shadow:0 10px 24px rgba(17,24,39,.18)}
+    .logo span{color:var(--accent);font-size:20px}
+    .navlinks{display:flex;gap:24px;font-weight:700;color:#374151;font-size:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 20px;font-weight:850;cursor:pointer;transition:.18s ease;background:var(--ink);color:white;box-shadow:0 12px 28px rgba(17,24,39,.16)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 18px 36px rgba(17,24,39,.2)}
+    .btn.alt{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+    .btn.orange{background:var(--accent);color:white}
+    .hero{padding:76px 0 40px;overflow:hidden}
+    .grid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:800;font-size:13px;color:#374151}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+    h1{font-size:68px;line-height:.95;letter-spacing:-.065em;margin:20px 0 18px;max-width:720px}
+    .lead{font-size:22px;color:#374151;max-width:630px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .small{font-size:13px;color:var(--muted);margin-top:16px;max-width:570px}
+    .phone{position:relative;margin:auto;width:min(410px,100%);border:12px solid #111827;border-radius:44px;background:#fff;box-shadow:var(--shadow);padding:18px;min-height:650px}
+    .phone:before{content:"";position:absolute;width:96px;height:6px;border-radius:99px;background:#111827;top:12px;left:50%;transform:translateX(-50%)}
+    .profile-card{margin-top:18px;border:1px solid var(--line);border-radius:30px;padding:18px;background:linear-gradient(180deg,#fff,#fff8f0)}
+    .profile-top{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+    .avatar{width:64px;height:64px;border-radius:22px;background:linear-gradient(135deg,var(--accent-2),#fff);display:grid;place-items:center;font-size:32px}
+    .name{font-weight:900;font-size:22px;letter-spacing:-.04em}.loc{color:var(--muted);font-weight:650;font-size:14px}
+    .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.ph{height:95px;border-radius:18px;background:#f6eadc;display:grid;place-items:center;font-size:28px;border:1px solid var(--line)}
+    .amounts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}.amt{padding:16px;border-radius:18px;background:white;border:1px solid var(--line);font-weight:900;text-align:center}.amt.sel{background:var(--ink);color:white}
+    .receive{border-radius:20px;background:#ecfdf5;color:#166534;padding:14px 16px;font-weight:900;text-align:center;margin:12px 0}.pay{width:100%;padding:17px;border-radius:20px;background:var(--accent);color:#fff;border:0;font-weight:950;font-size:17px}.stars{text-align:center;font-size:24px;margin-top:16px}.asterisk{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+    section{padding:72px 0}.section-title{font-size:46px;line-height:1;letter-spacing:-.055em;margin:0 0 14px}.section-lead{font-size:19px;color:#4b5563;max-width:720px;margin:0 0 30px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 28px rgba(17,24,39,.05)}.card h3{margin:14px 0 8px;font-size:22px;letter-spacing:-.035em}.card p{margin:0;color:#4b5563}.icon{width:44px;height:44px;border-radius:16px;background:#fff1e6;display:grid;place-items:center;font-size:24px}
+    .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.step{display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:24px;padding:20px}.num{min-width:38px;height:38px;border-radius:14px;background:var(--ink);color:white;display:grid;place-items:center;font-weight:950}.step strong{display:block;font-size:18px;margin-bottom:4px}.step span{color:#4b5563}
+    .signup{background:#111827;color:white;border-radius:42px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;box-shadow:var(--shadow)}.signup h2{font-size:48px;line-height:1;letter-spacing:-.06em;margin:0 0 12px}.signup p{color:#d1d5db;font-size:18px}.signup-card{background:white;color:var(--ink);border-radius:30px;padding:24px}.social{display:grid;gap:12px}.input{width:100%;padding:15px 16px;border-radius:16px;border:1px solid var(--line);font-size:15px;margin:10px 0}.note{font-size:12px;color:#6b7280;margin-top:12px}.coming{margin-top:22px;padding:14px;border:1px dashed rgba(255,255,255,.35);border-radius:20px;color:#fdebd7;background:rgba(255,255,255,.06)}
+    footer{padding:36px 0 46px;color:#6b7280}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+    @media(max-width:900px){.grid,.signup{grid-template-columns:1fr}h1{font-size:50px}.section-title{font-size:38px}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.navlinks{display:none}.phone{min-height:610px}.hero{padding-top:48px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#"><span class="logo"><span>$</span></span> SoloPropinas</a>
+      <nav class="navlinks">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#alta">Crear QR</a>
+      </nav>
+      <a class="btn" href="#alta">Empezar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Propinas digitales sin fricción</span>
+          <h1>Cobra sí o sí tus propinas</h1>
+          <p class="lead">Creá tu QR único sin vencimiento y comenzá ya. Tus clientes escanean, eligen cuánto dejar y recibís la propina al instante.</p>
+          <div class="actions">
+            <a class="btn orange" href="#alta">Crear mi QR gratis</a>
+            <a class="btn alt" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+          <p class="small">Próximamente: pozos compartidos para dividir propinas entre equipos y múltiples sitios.</p>
+        </div>
+        <div class="phone" aria-label="Vista previa del perfil de propinas">
+          <div class="profile-card">
+            <div class="profile-top">
+              <div class="avatar">😊</div>
+              <div>
+                <div class="name">Juan García</div>
+                <div class="loc">Mozo en Bar Roma</div>
+              </div>
+            </div>
+            <div class="photos">
+              <div class="ph">😄</div>
+              <div class="ph">🎸</div>
+              <div class="ph">👨‍👧</div>
+            </div>
+            <p style="font-weight:850;margin:12px 0 0">¿Cuánto querés dejarle?</p>
+            <div class="amounts">
+              <div class="amt">$500</div>
+              <div class="amt sel">$1.000</div>
+              <div class="amt">$2.000</div>
+              <div class="amt">Otro</div>
+            </div>
+            <div class="receive">Juan recibe $950*</div>
+            <button class="pay">Dejar propina</button>
+            <div class="stars">★★★★★</div>
+            <div class="asterisk">*La diferencia entre el monto abonado y el importe recibido corresponde al costo del servicio. Más información en legales.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="wrap">
+        <h2 class="section-title">Un QR fijo. Propinas simples.</h2>
+        <p class="section-lead">SoloPropinas convierte el momento incómodo de pedir alias o efectivo en una experiencia rápida, humana y medible.</p>
+        <div class="cards">
+          <article class="card"><div class="icon">📱</div><h3>Escanean tu QR</h3><p>Tu QR no vence y apunta a tu perfil. Si cambiás cuenta de cobro, no necesitás reimprimirlo.</p></article>
+          <article class="card"><div class="icon">🙋</div><h3>Ven a quién pagan</h3><p>Mostrás tu nombre, local y hasta 3 fotos para que el cliente entienda que le deja propina a una persona real.</p></article>
+          <article class="card"><div class="icon">⚡</div><h3>Cobrás al instante</h3><p>El cliente elige monto, paga y vos recibís la propina en tu cuenta vinculada.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Alta pensada para mozos</h2>
+        <p class="section-lead">Sin formularios largos. Sin app obligatoria. Solo los datos necesarios para empezar a cobrar.</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><strong>Ingresás con Google o Apple</strong><span>Login rápido y seguro para crear tu cuenta.</span></div></div>
+          <div class="step"><div class="num">2</div><div><strong>Agregás tu WhatsApp</strong><span>Lo usamos para seguridad y notificaciones importantes.</span></div></div>
+          <div class="step"><div class="num">3</div><div><strong>Subís hasta 3 fotos</strong><span>Una divertida, una con un hobby y una personal para humanizar tu perfil.</span></div></div>
+          <div class="step"><div class="num">4</div><div><strong>Elegís tu local</strong><span>Te sugerimos lugares cercanos por geolocalización. Las reseñas son opcionales.</span></div></div>
+          <div class="step"><div class="num">5</div><div><strong>Conectás dónde cobrar</strong><span>Mercado Pago primero. Próximamente MODO, Ualá y Naranja X.</span></div></div>
+          <div class="step"><div class="num">6</div><div><strong>Descargás tu QR</strong><span>Lo imprimís, compartís o llevás con vos.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seguridad">
+      <div class="wrap">
+        <h2 class="section-title">Tu cuenta de cobro no se cambia por error</h2>
+        <p class="section-lead">Los cambios sensibles requieren validación adicional. Si alguien intenta modificar tu cuenta de cobro, te avisamos y bloqueamos el cambio hasta verificarlo.</p>
+        <div class="cards">
+          <article class="card"><div class="icon">🔐</div><h3>Cuenta protegida</h3><p>Login seguro, verificación por WhatsApp y alertas ante cambios importantes.</p></article>
+          <article class="card"><div class="icon">⏳</div><h3>Cambios con demora</h3><p>El cambio de alias o wallet no se aplica inmediatamente sin controles adicionales.</p></article>
+          <article class="card"><div class="icon">✅</div><h3>Validación de titularidad</h3><p>La cuenta vinculada debe corresponder al mozo o pasar revisión.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="alta">
+      <div class="wrap signup">
+        <div>
+          <h2>Creá tu QR único</h2>
+          <p>Esta es la primera versión del alta. En la versión final podrás conectar tu cuenta de cobro, descargar el QR y administrar fotos, WhatsApp y alias desde tu panel.</p>
+          <div class="coming">Próximamente: pozo compartido por equipo, múltiples locales y administrador avanzado.</div>
+        </div>
+        <form class="signup-card" onsubmit="event.preventDefault(); alert('Gracias. Esta maqueta todavía no guarda datos.');">
+          <h3 style="margin:0 0 14px;font-size:26px;letter-spacing:-.04em">Empezá ahora</h3>
+          <div class="social">
+            <button type="button" class="btn alt">Continuar con Google</button>
+            <button type="button" class="btn alt">Continuar con Apple</button>
+          </div>
+          <input class="input" type="tel" placeholder="WhatsApp" />
+          <button class="btn orange" style="width:100%;margin-top:6px" type="submit">Crear mi QR</button>
+          <p class="note">Al continuar aceptás los términos y políticas de SoloPropinas. La acreditación depende del medio de pago conectado.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> SoloPropinas.com</div>
+      <div>Legales · Privacidad · Contacto</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+El menú de 1Password está disponible. Pulsa la fecha hacia abajo para seleccionar.
