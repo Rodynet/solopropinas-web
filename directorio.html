@@ -147,7 +147,7 @@
     .journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .journey-card {
       position: relative;
-      min-height: 235px;
+      min-height: 310px;
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -155,12 +155,27 @@
       box-shadow: 0 8px 30px rgba(7, 61, 49, .04);
       transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
+    .journey-card.completed { border-color: #91d7b8; background: linear-gradient(145deg, #f2fcf7, #fff 54%); }
     .journey-card:hover { transform: translateY(-4px); border-color: #a7d9c4; box-shadow: var(--shadow); }
     .stage-number { color: var(--green-600); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
     .stage-icon { position: absolute; top: 21px; right: 22px; font-size: 23px; }
-    .journey-card h3 { margin: 26px 0 8px; color: var(--green-950); font-size: 21px; letter-spacing: -.02em; }
+    .stage-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px; padding: 6px 10px; border-radius: 99px; color: #67746f; background: var(--gray-bg); font-size: 11px; font-weight: 850; text-transform: uppercase; letter-spacing: .05em; }
+    .stage-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .stage-status.completed { color: var(--green-700); background: var(--green-100); }
+    .journey-card h3 { margin: 17px 0 8px; color: var(--green-950); font-size: 21px; letter-spacing: -.02em; }
     .journey-card p { margin: 0; color: var(--muted); font-size: 14px; }
-    .screen-count { position: absolute; left: 24px; bottom: 22px; color: var(--green-700); font-size: 13px; font-weight: 800; }
+    .card-footer { position: absolute; left: 24px; right: 24px; bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .screen-count { color: var(--green-700); font-size: 13px; font-weight: 800; }
+    .detail-toggle { border: 0; padding: 0; background: transparent; color: var(--muted); font-size: 12px; font-weight: 800; cursor: pointer; }
+    .detail-toggle:hover { color: var(--green-700); }
+
+    .stage-detail { grid-column: 1 / -1; display: none; margin-top: -4px; padding: 26px; border: 1px solid #b9dfcf; border-radius: var(--radius); background: #f7fcf9; }
+    .stage-detail.open { display: grid; grid-template-columns: 1fr 1.25fr; gap: 26px; }
+    .detail-block h4 { margin: 0 0 10px; color: var(--green-950); font-size: 15px; }
+    .detail-block p { margin: 0; color: var(--muted); font-size: 14px; }
+    .observation-list { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .observation-list li + li { margin-top: 6px; }
+    .requirement-label { display: inline-block; margin-bottom: 8px; color: var(--green-700); font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 
     .directory-wrap { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
     .toolbar { padding: 18px; display: grid; grid-template-columns: 1fr 210px 180px; gap: 12px; border-bottom: 1px solid var(--line); background: #fbfdfc; }
@@ -208,7 +223,8 @@
       .principle-icon { flex-basis: 44px; height: 44px; border-radius: 14px; }
       section { padding: 36px 0; }
       .journey-grid, .stats { grid-template-columns: 1fr; }
-      .journey-card { min-height: 205px; }
+      .journey-card { min-height: 285px; }
+      .stage-detail.open { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
       .toolbar .search { grid-column: auto; }
       .future-card, .footer-row { align-items: flex-start; flex-direction: column; }
@@ -336,15 +352,26 @@
     const journeyData = [
       {
         title: "Descubrir SoloPropinas", icon: "✦",
+        stageStatus: "Cumplida",
         objective: "Entender la propuesta y por qué facilita recibir propinas.",
+        observations: [
+          "Conectar los botones “Crear mi cuenta” con el proceso real de alta.",
+          "Aclarar los medios de cobro disponibles.",
+          "Agregar preguntas frecuentes y señales de confianza verificables.",
+          "Validar que expresiones como “al instante” reflejen exactamente la operación final."
+        ],
+        developerRequest: "Conservar la landing y la explicación visual de cómo funciona como base aprobada. Preparar la implementación responsive definitiva y dejar todos los llamados a la acción listos para enlazar con la etapa Crear cuenta. Documentar componentes, estados, enlaces y criterios de aceptación.",
         screens: [
-          { name: "Landing principal", status: "En progreso", url: "#" },
-          { name: "Cómo funciona", status: "Pendiente", url: "#" }
+          { name: "Landing principal", status: "Publicado", url: "https://www.solopropinas.com/" },
+          { name: "Cómo funciona", status: "Publicado", url: "https://www.solopropinas.com/#funciona" }
         ]
       },
       {
         title: "Crear cuenta", icon: "＋",
+        stageStatus: "Pendiente de definición",
         objective: "Empezar en menos de un minuto, sin formularios innecesarios.",
+        observations: ["Definir la maqueta visual y el alcance funcional antes de iniciar el desarrollo."],
+        developerRequest: "Especificar el flujo de registro, accesos con Google y Apple, mensajes de error, estados de carga, recuperación y confirmación. Entregar maqueta responsive y criterios de aceptación.",
         screens: [
           { name: "Registro", status: "Pendiente", url: "#" },
           { name: "Continuar con Google", status: "Pendiente", url: "#" },
@@ -353,7 +380,10 @@
       },
       {
         title: "Validar identidad", icon: "✓",
+        stageStatus: "Pendiente de definición",
         objective: "Confirmar quién recibirá las propinas de forma confiable.",
+        observations: ["Definir proveedor, vigencia y cantidad de reintentos del código de validación."],
+        developerRequest: "Especificar ingreso y validación de WhatsApp/SMS, reenvío de código, vencimiento, límites de intentos, errores y recuperación. Entregar maqueta responsive y criterios de aceptación.",
         screens: [
           { name: "Ingresar WhatsApp", status: "Pendiente", url: "#" },
           { name: "Validar código SMS", status: "Pendiente", url: "#" }
@@ -361,7 +391,10 @@
       },
       {
         title: "Personalizar mi página", icon: "☺",
+        stageStatus: "Pendiente de definición",
         objective: "Humanizar el cobro y mostrar quién está detrás del QR.",
+        observations: ["Definir campos obligatorios, tratamiento de fotografías y moderación de contenido."],
+        developerRequest: "Especificar edición de datos, selección de local, carga y recorte de fotos, reseñas y vista previa. Incluir validaciones, permisos, estados vacíos y maqueta responsive.",
         screens: [
           { name: "Datos personales", status: "Pendiente", url: "#" },
           { name: "Seleccionar local", status: "Pendiente", url: "#" },
@@ -372,7 +405,10 @@
       },
       {
         title: "Configurar cobro", icon: "$",
+        stageStatus: "Pendiente de definición",
         objective: "Elegir y cambiar libremente dónde recibir el dinero.",
+        observations: ["Confirmar billeteras, bancos y validaciones requeridas para cambiar el destino de cobro."],
+        developerRequest: "Especificar selección y conexión del medio de cobro, ingreso de CBU/alias, verificación de titularidad, confirmación, cambio seguro y tratamiento de errores.",
         screens: [
           { name: "Elegir medio de cobro", status: "Pendiente", url: "#" },
           { name: "Conectar billetera", status: "Pendiente", url: "#" },
@@ -382,7 +418,10 @@
       },
       {
         title: "Obtener mi QR", icon: "▦",
+        stageStatus: "Pendiente de definición",
         objective: "Tener un QR personal, permanente y listo para usar.",
+        observations: ["Definir formatos, tamaños y materiales de impresión disponibles."],
+        developerRequest: "Especificar generación del QR permanente, descarga, impresión y opciones para compartir. Incluir formatos de archivo, pruebas de lectura, estados y maqueta responsive.",
         screens: [
           { name: "QR generado", status: "Pendiente", url: "#" },
           { name: "Descargar QR", status: "Pendiente", url: "#" },
@@ -392,7 +431,10 @@
       },
       {
         title: "Comenzar a cobrar", icon: "↗",
+        stageStatus: "Pendiente de definición",
         objective: "Poner el QR en circulación con mínima fricción.",
+        observations: ["Definir el contenido de ayuda inicial y los materiales que se ofrecerán al trabajador."],
+        developerRequest: "Diseñar la guía de primeros pasos y el acceso a materiales para el local. Especificar progreso, recomendaciones, descargas, soporte y criterios de finalización.",
         screens: [
           { name: "Guía de primeros pasos", status: "Pendiente", url: "#" },
           { name: "Materiales para el local", status: "Pendiente", url: "#" }
@@ -400,7 +442,10 @@
       },
       {
         title: "Recibir propinas", icon: "♥",
+        stageStatus: "Pendiente de definición",
         objective: "Lograr un pago rápido, claro y agradable para el cliente.",
+        observations: ["Definir montos sugeridos, medios de pago y comportamiento ante pagos rechazados o pendientes."],
+        developerRequest: "Especificar el recorrido público desde el perfil hasta el agradecimiento: selección de monto, pago, confirmación, errores, reintentos, accesibilidad y experiencia móvil.",
         screens: [
           { name: "Perfil público", status: "Pendiente", url: "#" },
           { name: "Elegir monto", status: "Pendiente", url: "#" },
@@ -410,7 +455,10 @@
       },
       {
         title: "Construir prestigio", icon: "★",
+        stageStatus: "Pendiente de definición",
         objective: "Transformar cada buena experiencia en reconocimiento.",
+        observations: ["Definir reglas de publicación, moderación y asociación de reseñas con personas y locales."],
+        developerRequest: "Especificar solicitud de reseñas, reputación, comentarios, moderación y compartir logros. Incluir estados vacíos, privacidad, denuncias y maqueta responsive.",
         screens: [
           { name: "Solicitar reseña", status: "Pendiente", url: "#" },
           { name: "Perfil y reputación", status: "Pendiente", url: "#" },
@@ -419,7 +467,10 @@
       },
       {
         title: "Administrar mi cuenta", icon: "⚙",
+        stageStatus: "Pendiente de definición",
         objective: "Controlar movimientos, perfil y preferencias desde un lugar.",
+        observations: ["Definir métricas principales, períodos del historial y permisos para cambios sensibles."],
+        developerRequest: "Especificar panel, historial, edición de perfil, cambio seguro de cuenta de cobro y configuración. Incluir filtros, estados, confirmaciones, seguridad y recuperación.",
         screens: [
           { name: "Panel principal", status: "Pendiente", url: "#" },
           { name: "Historial de propinas", status: "Pendiente", url: "#" },
@@ -430,7 +481,10 @@
       },
       {
         title: "Funciones futuras", icon: "∞",
+        stageStatus: "Pendiente de definición",
         objective: "Registrar oportunidades sin mezclarlas con la experiencia actual.",
+        observations: ["Mantener esta etapa fuera del alcance inicial hasta priorizar cada funcionalidad."],
+        developerRequest: "Documentar cada iniciativa futura como requerimiento independiente, con problema, usuario, alcance, maqueta, dependencias, métricas y criterios de aceptación antes de desarrollarla.",
         screens: [
           { name: "Objetivos de ahorro", status: "Pendiente", url: "#" },
           { name: "Beneficios y comunidad", status: "Pendiente", url: "#" },
@@ -454,28 +508,62 @@
 
     function renderStats() {
       const published = allScreens.filter(item => item.status === "Publicado").length;
-      const inProgress = allScreens.filter(item => item.status === "En progreso").length;
+      const completedStages = journeyData.filter(item => item.stageStatus === "Cumplida").length;
       const progress = allScreens.length ? Math.round((published / allScreens.length) * 100) : 0;
       document.querySelector("#stats").innerHTML = `
         <div class="stat"><span class="stat-value">${journeyData.length}</span><span class="stat-label">Etapas del recorrido</span></div>
         <div class="stat"><span class="stat-value">${allScreens.length}</span><span class="stat-label">Pantallas definidas</span></div>
-        <div class="stat"><span class="stat-value">${inProgress}</span><span class="stat-label">En progreso</span></div>
+        <div class="stat"><span class="stat-value">${completedStages}/${journeyData.length}</span><span class="stat-label">Etapas cumplidas</span></div>
         <div class="stat"><span class="stat-value">${progress}%</span><span class="stat-label">Pantallas publicadas</span><div class="progress-track"><div class="progress-bar" style="width:${progress}%"></div></div></div>`;
     }
 
     function renderJourney() {
-      journeyGrid.innerHTML = journeyData.map((stage, index) => `
-        <article class="journey-card" id="${slug(stage.title)}">
+      journeyGrid.innerHTML = journeyData.map((stage, index) => {
+        const completed = stage.stageStatus === "Cumplida";
+        const detailId = `detalle-${slug(stage.title)}`;
+        return `
+        <article class="journey-card ${completed ? "completed" : ""}" id="${slug(stage.title)}">
           <span class="stage-number">ETAPA ${String(index + 1).padStart(2, "0")}</span>
           <span class="stage-icon" aria-hidden="true">${stage.icon}</span>
+          <span class="stage-status ${completed ? "completed" : ""}">${stage.stageStatus}</span>
           <h3>${stage.title}</h3>
           <p>${stage.objective}</p>
-          <a class="screen-count" href="#directorio" data-stage="${stage.title}">${stage.screens.length} ${stage.screens.length === 1 ? "pantalla" : "pantallas"} →</a>
-        </article>`).join("");
+          <div class="card-footer">
+            <a class="screen-count" href="#directorio" data-stage="${stage.title}">${stage.screens.length} ${stage.screens.length === 1 ? "pantalla" : "pantallas"} →</a>
+            <button class="detail-toggle" type="button" data-detail="${detailId}" aria-expanded="false">Ver requerimiento ↓</button>
+          </div>
+        </article>
+        <aside class="stage-detail" id="${detailId}" aria-label="Documentación de ${stage.title}">
+          <div class="detail-block">
+            <h4>Observaciones</h4>
+            <ul class="observation-list">${stage.observations.map(item => `<li>${item}</li>`).join("")}</ul>
+          </div>
+          <div class="detail-block">
+            <span class="requirement-label">Solicitud a desarrollo</span>
+            <h4>Maqueta visual y especificaciones</h4>
+            <p>${stage.developerRequest}</p>
+          </div>
+        </aside>`;
+      }).join("");
 
       document.querySelectorAll("[data-stage]").forEach(link => link.addEventListener("click", () => {
         stageFilter.value = link.dataset.stage;
         renderTable();
+      }));
+
+      document.querySelectorAll("[data-detail]").forEach(button => button.addEventListener("click", () => {
+        const panel = document.querySelector(`#${button.dataset.detail}`);
+        const willOpen = !panel.classList.contains("open");
+        document.querySelectorAll(".stage-detail.open").forEach(openPanel => openPanel.classList.remove("open"));
+        document.querySelectorAll("[data-detail]").forEach(toggle => {
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "Ver requerimiento ↓";
+        });
+        if (willOpen) {
+          panel.classList.add("open");
+          button.setAttribute("aria-expanded", "true");
+          button.textContent = "Cerrar requerimiento ↑";
+        }
       }));
     }
 
