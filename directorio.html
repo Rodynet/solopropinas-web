@@ -385,7 +385,7 @@
       },
       {
         title: "Validar identidad", icon: "✓",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Confirmar quién recibirá las propinas de forma confiable.",
         observations: [
           "Maqueta inicial creada para revisión.",
@@ -395,22 +395,27 @@
         ],
         developerRequest: "Implementar confirmación mobile-first del número de WhatsApp mediante código de seis dígitos, con SMS como recuperación. Incluir formato argentino, autocompletado, pegado del código, reenvío controlado, edición del número, errores, límites de intentos y continuidad hacia Personalizar mi página.",
         screens: [
-          { name: "Ingresar WhatsApp", status: "En progreso", url: "etapa-3-validar-identidad.html" },
-          { name: "Validar código", status: "En progreso", url: "etapa-3-validar-identidad.html" }
+          { name: "Ingresar WhatsApp", status: "Publicado", url: "etapa-3-validar-identidad.html" },
+          { name: "Validar código", status: "Publicado", url: "etapa-3-validar-identidad.html" }
         ]
       },
       {
         title: "Personalizar mi página", icon: "☺",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Humanizar el cobro y mostrar quién está detrás del QR.",
-        observations: ["Definir campos obligatorios, tratamiento de fotografías y moderación de contenido."],
-        developerRequest: "Especificar edición de datos, selección de local, carga y recorte de fotos, reseñas y vista previa. Incluir validaciones, permisos, estados vacíos y maqueta responsive.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "La foto principal y el nombre visible forman el perfil mínimo; las fotos personales y de hobbies son opcionales.",
+          "Las reseñas se muestran cuando existen, pero el trabajador no puede cargarlas manualmente.",
+          "Definir moderación, formatos, peso máximo y política sobre fotografías de menores o terceras personas."
+        ],
+        developerRequest: "Implementar un asistente mobile-first de una decisión por pantalla: nombre visible, lugar de trabajo, foto principal, fotos personales opcionales y vista previa. Permitir guardar y continuar sin completar contenido opcional. Incluir carga, recorte, compresión, permisos, moderación, estados vacíos y continuidad hacia Configurar cobro.",
         screens: [
-          { name: "Datos personales", status: "Pendiente", url: "#" },
-          { name: "Seleccionar local", status: "Pendiente", url: "#" },
-          { name: "Subir fotos", status: "Pendiente", url: "#" },
-          { name: "Reseñas", status: "Pendiente", url: "#" },
-          { name: "Vista previa del perfil", status: "Pendiente", url: "#" }
+          { name: "Datos personales", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Seleccionar local", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Subir fotos", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Reseñas", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Vista previa del perfil", status: "En progreso", url: "etapa-4-personalizar-pagina.html" }
         ]
       },
       {
