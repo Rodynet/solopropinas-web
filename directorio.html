@@ -401,7 +401,7 @@
       },
       {
         title: "Personalizar mi página", icon: "☺",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Humanizar el cobro y mostrar quién está detrás del QR.",
         observations: [
           "Maqueta revisada para contemplar múltiples lugares de trabajo y alta de locales inexistentes.",
@@ -413,24 +413,30 @@
         ],
         developerRequest: "Implementar un asistente mobile-first con nombre visible, selección de uno o varios locales, alta no bloqueante de un local inexistente, selfie o galería, editor de recorte y zoom, avatar alternativo, fotos personales opcionales con ejemplos y vista previa. Incluir recordatorio posterior para perfiles sin foto, sin afirmar mejoras porcentuales hasta validarlas con datos.",
         screens: [
-          { name: "Datos personales", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Seleccionar local", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Subir fotos", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Reseñas", status: "En progreso", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Vista previa del perfil", status: "En progreso", url: "etapa-4-personalizar-pagina.html" }
+          { name: "Datos personales", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Seleccionar local", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Subir fotos", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Reseñas", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Vista previa del perfil", status: "Publicado", url: "etapa-4-personalizar-pagina.html" }
         ]
       },
       {
         title: "Configurar cobro", icon: "$",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Elegir y cambiar libremente dónde recibir el dinero.",
-        observations: ["Confirmar billeteras, bancos y validaciones requeridas para cambiar el destino de cobro."],
-        developerRequest: "Especificar selección y conexión del medio de cobro, ingreso de CBU/alias, verificación de titularidad, confirmación, cambio seguro y tratamiento de errores.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "El usuario ingresa alias, CBU o CVU sin tener que elegir previamente una marca de banco o billetera.",
+          "Confirmar con proveedores reales qué datos pueden resolverse y mostrarse antes de guardar.",
+          "Definir requisitos regulatorios y de titularidad antes del desarrollo productivo.",
+          "Cambiar el destino de cobro nunca modifica el QR personal."
+        ],
+        developerRequest: "Implementar configuración mobile-first mediante alias, CBU o CVU, resolviendo entidad y titular antes de confirmar. Incluir validación de formato, cuenta inexistente, titularidad, confirmación explícita, protección de cambios sensibles y edición futura sin regenerar el QR.",
         screens: [
-          { name: "Elegir medio de cobro", status: "Pendiente", url: "#" },
-          { name: "Conectar billetera", status: "Pendiente", url: "#" },
-          { name: "Ingresar CBU o alias", status: "Pendiente", url: "#" },
-          { name: "Confirmar cuenta", status: "Pendiente", url: "#" }
+          { name: "Elegir medio de cobro", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
+          { name: "Usar banco o billetera", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
+          { name: "Ingresar CBU o alias", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
+          { name: "Confirmar cuenta", status: "En progreso", url: "etapa-5-configurar-cobro.html" }
         ]
       },
       {
