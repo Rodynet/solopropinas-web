@@ -422,7 +422,7 @@
       },
       {
         title: "Configurar cobro", icon: "$",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Elegir y cambiar libremente dónde recibir el dinero.",
         observations: [
           "Maqueta inicial creada para revisión.",
@@ -433,23 +433,28 @@
         ],
         developerRequest: "Implementar configuración mobile-first mediante alias, CBU o CVU, resolviendo entidad y titular antes de confirmar. Incluir validación de formato, cuenta inexistente, titularidad, confirmación explícita, protección de cambios sensibles y edición futura sin regenerar el QR.",
         screens: [
-          { name: "Elegir medio de cobro", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
-          { name: "Usar banco o billetera", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
-          { name: "Ingresar CBU o alias", status: "En progreso", url: "etapa-5-configurar-cobro.html" },
-          { name: "Confirmar cuenta", status: "En progreso", url: "etapa-5-configurar-cobro.html" }
+          { name: "Elegir medio de cobro", status: "Publicado", url: "etapa-5-configurar-cobro.html" },
+          { name: "Usar banco o billetera", status: "Publicado", url: "etapa-5-configurar-cobro.html" },
+          { name: "Ingresar CBU o alias", status: "Publicado", url: "etapa-5-configurar-cobro.html" },
+          { name: "Confirmar cuenta", status: "Publicado", url: "etapa-5-configurar-cobro.html" }
         ]
       },
       {
         title: "Obtener mi QR", icon: "▦",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Tener un QR personal, permanente y listo para usar.",
-        observations: ["Definir formatos, tamaños y materiales de impresión disponibles."],
-        developerRequest: "Especificar generación del QR permanente, descarga, impresión y opciones para compartir. Incluir formatos de archivo, pruebas de lectura, estados y maqueta responsive.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "El QR contiene una URL pública estable y un identificador opaco; nunca datos bancarios ni información personal sensible.",
+          "Los materiales pueden mostrar un local, pero el código continúa perteneciendo a la persona.",
+          "Definir tamaños mínimos, formatos finales y proveedor de generación antes del desarrollo."
+        ],
+        developerRequest: "Generar un QR personal y permanente con URL HTTPS estable, descarga en PNG y PDF, materiales listos para impresión y uso del compartir nativo del dispositivo. Validar contraste, margen de seguridad, lectura en tamaños mínimos y continuidad aunque cambien perfil, local o destino de cobro.",
         screens: [
-          { name: "QR generado", status: "Pendiente", url: "#" },
-          { name: "Descargar QR", status: "Pendiente", url: "#" },
-          { name: "Imprimir QR", status: "Pendiente", url: "#" },
-          { name: "Compartir QR", status: "Pendiente", url: "#" }
+          { name: "QR generado", status: "En progreso", url: "etapa-6-obtener-qr.html" },
+          { name: "Descargar QR", status: "En progreso", url: "etapa-6-obtener-qr.html" },
+          { name: "Imprimir QR", status: "En progreso", url: "etapa-6-obtener-qr.html" },
+          { name: "Compartir QR", status: "En progreso", url: "etapa-6-obtener-qr.html" }
         ]
       },
       {
