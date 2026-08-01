@@ -441,34 +441,46 @@
       },
       {
         title: "Obtener mi QR", icon: "▦",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Tener un QR personal, permanente y listo para usar.",
         observations: [
           "Maqueta revisada para tratar la entrega del QR como momento crítico de activación.",
-          "Antes de descargar, la persona ve el material y la experiencia completa que tendrá el cliente.",
-          "WhatsApp confirmado es la entrega principal para que el QR quede inmediatamente a mano.",
+          "Antes de recibir el QR, la persona ve el material y la experiencia completa que tendrá el cliente.",
+          "WhatsApp confirmado es la única entrega ofrecida durante el onboarding.",
+          "Guardar, descargar e imprimir se mencionan, pero se administran posteriormente desde el panel.",
+          "El archivo de WhatsApp puede reenviarse directamente a quien vaya a imprimirlo.",
+          "La primera pantalla solo permite enviar el QR por WhatsApp.",
+          "Después de confirmar el envío, Empezar a cobrar es la acción principal y la guía queda como opción secundaria.",
+          "Si el usuario abre la guía, esta también termina en Empezar a cobrar.",
+          "Se eliminó la pantalla final de confirmación: ambas rutas continúan directamente a Primeros pasos.",
           "La etapa enseña cómo acercarlo a la mesa y ofrece una frase simple, natural y sin presión.",
           "El QR contiene una URL pública estable y un identificador opaco; nunca datos bancarios ni información personal sensible.",
           "Los materiales pueden mostrar un local, pero el código continúa perteneciendo a la persona.",
           "Definir tamaños mínimos, formatos finales y proveedor de generación antes del desarrollo."
         ],
-        developerRequest: "Implementar la activación mostrando primero el material físico y la pantalla real del cliente con nombre, fotos y mensaje del trabajador. Entregar el QR por WhatsApp confirmado en un toque, mantener PNG, PDF e impresión como alternativas y enseñar cómo ofrecerlo en la mesa. El QR usa URL HTTPS estable y no cambia con perfil, local o destino de cobro.",
+        developerRequest: "Implementar la activación mostrando el material y la pantalla del cliente. La primera pantalla solo permite enviar al WhatsApp confirmado. Tras la entrega, Empezar a cobrar enlaza directamente a Primeros pasos y Ver cómo ofrecerlo queda como opción secundaria. La guía también enlaza directamente a Primeros pasos, sin pantalla final de confirmación.",
         screens: [
-          { name: "QR generado", status: "En progreso", url: "etapa-6-obtener-qr.html" },
-          { name: "Descargar QR", status: "En progreso", url: "etapa-6-obtener-qr.html" },
-          { name: "Imprimir QR", status: "En progreso", url: "etapa-6-obtener-qr.html" },
-          { name: "Compartir QR", status: "En progreso", url: "etapa-6-obtener-qr.html" }
+          { name: "Experiencia del cliente", status: "Publicado", url: "etapa-6-obtener-qr.html" },
+          { name: "Enviar QR por WhatsApp", status: "Publicado", url: "etapa-6-obtener-qr.html" },
+          { name: "Confirmar entrega", status: "Publicado", url: "etapa-6-obtener-qr.html" },
+          { name: "Cómo presentarlo", status: "Publicado", url: "etapa-6-obtener-qr.html" }
         ]
       },
       {
         title: "Comenzar a cobrar", icon: "↗",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Poner el QR en circulación con mínima fricción.",
-        observations: ["Definir el contenido de ayuda inicial y los materiales que se ofrecerán al trabajador."],
-        developerRequest: "Diseñar la guía de primeros pasos y el acceso a materiales para el local. Especificar progreso, recomendaciones, descargas, soporte y criterios de finalización.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "El objetivo no es enseñar nuevamente el producto, sino lograr que el trabajador use el QR en su próxima mesa.",
+          "El QR permanece accesible desde WhatsApp y también desde un modo de pantalla completa.",
+          "Descarga e impresión se administran desde el panel y no interrumpen el primer uso."
+        ],
+        developerRequest: "Implementar Primeros pasos con una preparación breve, acceso inmediato al QR en pantalla completa, frase sugerida y objetivo concreto para la próxima mesa. Mostrar un panel inicial sin propinas que indique la única acción recomendada. Mantener materiales, descargas e impresión como funciones secundarias del panel.",
         screens: [
-          { name: "Guía de primeros pasos", status: "Pendiente", url: "#" },
-          { name: "Materiales para el local", status: "Pendiente", url: "#" }
+          { name: "Guía de primeros pasos", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" },
+          { name: "Mostrar mi QR", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" },
+          { name: "Mi primer turno", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" }
         ]
       },
       {
