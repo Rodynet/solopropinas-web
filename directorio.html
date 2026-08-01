@@ -368,7 +368,7 @@
       },
       {
         title: "Crear cuenta", icon: "＋",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Empezar en menos de un minuto, sin formularios innecesarios.",
         observations: [
           "Maqueta inicial creada para revisión.",
@@ -378,20 +378,25 @@
         ],
         developerRequest: "Implementar el flujo mobile-first documentado en la maqueta: accesos OAuth con Google y Apple, sin contraseña ni formulario manual; estados inicial, conectando, éxito, cancelación, error y cuenta existente. Al finalizar, dirigir únicamente a Validar identidad sin solicitar información de perfil, QR o cobro.",
         screens: [
-          { name: "Registro", status: "En progreso", url: "etapa-2-crear-cuenta.html" },
-          { name: "Continuar con Google", status: "En progreso", url: "etapa-2-crear-cuenta.html" },
-          { name: "Continuar con Apple", status: "En progreso", url: "etapa-2-crear-cuenta.html" }
+          { name: "Registro", status: "Publicado", url: "etapa-2-crear-cuenta.html" },
+          { name: "Continuar con Google", status: "Publicado", url: "etapa-2-crear-cuenta.html" },
+          { name: "Continuar con Apple", status: "Publicado", url: "etapa-2-crear-cuenta.html" }
         ]
       },
       {
         title: "Validar identidad", icon: "✓",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Confirmar quién recibirá las propinas de forma confiable.",
-        observations: ["Definir proveedor, vigencia y cantidad de reintentos del código de validación."],
-        developerRequest: "Especificar ingreso y validación de WhatsApp/SMS, reenvío de código, vencimiento, límites de intentos, errores y recuperación. Entregar maqueta responsive y criterios de aceptación.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "Confirmar el proveedor de WhatsApp/SMS, costo y disponibilidad por país.",
+          "Definir vigencia del código, límites de reintentos y tiempo de bloqueo.",
+          "La posesión del teléfono valida el canal de contacto, no constituye por sí sola validación de identidad legal."
+        ],
+        developerRequest: "Implementar confirmación mobile-first del número de WhatsApp mediante código de seis dígitos, con SMS como recuperación. Incluir formato argentino, autocompletado, pegado del código, reenvío controlado, edición del número, errores, límites de intentos y continuidad hacia Personalizar mi página.",
         screens: [
-          { name: "Ingresar WhatsApp", status: "Pendiente", url: "#" },
-          { name: "Validar código SMS", status: "Pendiente", url: "#" }
+          { name: "Ingresar WhatsApp", status: "En progreso", url: "etapa-3-validar-identidad.html" },
+          { name: "Validar código", status: "En progreso", url: "etapa-3-validar-identidad.html" }
         ]
       },
       {
