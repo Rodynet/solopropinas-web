@@ -368,14 +368,19 @@
       },
       {
         title: "Crear cuenta", icon: "＋",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "En diseño",
         objective: "Empezar en menos de un minuto, sin formularios innecesarios.",
-        observations: ["Definir la maqueta visual y el alcance funcional antes de iniciar el desarrollo."],
-        developerRequest: "Especificar el flujo de registro, accesos con Google y Apple, mensajes de error, estados de carga, recuperación y confirmación. Entregar maqueta responsive y criterios de aceptación.",
+        observations: [
+          "Maqueta inicial creada para revisión.",
+          "Confirmar si Google y Apple serán los dos únicos proveedores del lanzamiento.",
+          "Definir las URLs definitivas de Términos y Política de privacidad.",
+          "Validar los textos y estados de error antes de marcar la etapa como cumplida."
+        ],
+        developerRequest: "Implementar el flujo mobile-first documentado en la maqueta: accesos OAuth con Google y Apple, sin contraseña ni formulario manual; estados inicial, conectando, éxito, cancelación, error y cuenta existente. Al finalizar, dirigir únicamente a Validar identidad sin solicitar información de perfil, QR o cobro.",
         screens: [
-          { name: "Registro", status: "Pendiente", url: "#" },
-          { name: "Continuar con Google", status: "Pendiente", url: "#" },
-          { name: "Continuar con Apple", status: "Pendiente", url: "#" }
+          { name: "Registro", status: "En progreso", url: "etapa-2-crear-cuenta.html" },
+          { name: "Continuar con Google", status: "En progreso", url: "etapa-2-crear-cuenta.html" },
+          { name: "Continuar con Apple", status: "En progreso", url: "etapa-2-crear-cuenta.html" }
         ]
       },
       {
