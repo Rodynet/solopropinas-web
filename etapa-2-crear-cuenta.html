@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087a55">
+  <meta name="description" content="Maqueta y especificación de la etapa Crear cuenta de SoloPropinas.">
+  <title>Etapa 2 · Crear cuenta · SoloPropinas</title>
+  <style>
+    :root {
+      --green-950:#073d31; --green-800:#086247; --green-700:#087a55; --green-600:#0a9366;
+      --green-100:#dff7ec; --green-50:#effbf5; --ink:#16332b; --muted:#65756f;
+      --line:#dce8e3; --paper:#fff; --canvas:#f4f8f6; --danger:#b42318;
+      --shadow:0 24px 70px rgba(5,70,49,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:radial-gradient(circle at 20% -10%,#d9f5e8 0,transparent 32rem),var(--canvas);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    .topbar{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(220,232,227,.9);background:rgba(255,255,255,.88);backdrop-filter:blur(16px)}
+    .topbar-inner{width:min(1120px,calc(100% - 32px));min-height:68px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--green-950);font-weight:850;text-decoration:none}
+    .brand-mark{width:37px;height:37px;display:grid;place-items:center;border-radius:12px;color:white;background:var(--green-700);box-shadow:0 8px 18px rgba(8,122,85,.22)}
+    .mode-switch{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px;background:#f8fbf9}
+    .mode-button{min-height:36px;padding:0 13px;border:0;border-radius:9px;color:var(--muted);background:transparent;font-size:13px;font-weight:800}
+    .mode-button.active{color:var(--green-800);background:white;box-shadow:0 3px 12px rgba(5,70,49,.08)}
+
+    .view{display:none}.view.active{display:block}
+    .prototype-layout{width:min(1120px,calc(100% - 32px));min-height:calc(100vh - 68px);margin:auto;padding:56px 0;display:grid;grid-template-columns:1fr 430px;align-items:center;gap:72px}
+    .context .kicker{color:var(--green-700);font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .context h1{max-width:570px;margin:15px 0 20px;color:var(--green-950);font-size:clamp(40px,5.4vw,68px);line-height:1;letter-spacing:-.055em}
+    .context>p{max-width:570px;margin:0;color:var(--muted);font-size:18px}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px}
+    .principle{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.68)}
+    .principle strong{display:block;color:var(--green-950);font-size:13px}.principle span{display:block;margin-top:3px;color:var(--muted);font-size:12px}
+
+    .phone{width:100%;min-height:700px;padding:14px;border:1px solid #cbdcd5;border-radius:38px;background:#f9fbfa;box-shadow:var(--shadow)}
+    .phone-screen{position:relative;min-height:670px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:white}
+    .phone-head{height:72px;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+    .mini-brand{display:flex;align-items:center;gap:8px;color:var(--green-950);font-size:14px;font-weight:850}
+    .mini-mark{width:29px;height:29px;display:grid;place-items:center;border-radius:9px;color:white;background:var(--green-700)}
+    .step{color:var(--muted);font-size:12px;font-weight:750}
+    .screen{display:none;padding:34px 30px 30px}.screen.active{display:block;animation:enter .3s ease both}
+    @keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .screen-icon{width:57px;height:57px;display:grid;place-items:center;margin-bottom:24px;border-radius:18px;color:var(--green-800);background:var(--green-100);font-size:25px;font-weight:800}
+    .screen h2{margin:0;color:var(--green-950);font-size:31px;line-height:1.05;letter-spacing:-.045em}
+    .lead{margin:13px 0 26px;color:var(--muted);font-size:15px}
+    .provider{width:100%;min-height:54px;margin-top:11px;padding:0 17px;display:grid;grid-template-columns:28px 1fr 28px;align-items:center;border:1px solid var(--line);border-radius:14px;color:var(--ink);background:white;font-weight:800;transition:.18s ease}
+    .provider:hover{border-color:#8bcbb0;background:var(--green-50)}
+    .provider:focus-visible,.primary:focus-visible,.text-button:focus-visible{outline:3px solid rgba(10,147,102,.22);outline-offset:2px}
+    .provider-logo{display:grid;place-items:center;font-size:18px}.arrow{color:#8fa099}
+    .microcopy{margin:19px 4px 0;color:#7d8b86;font-size:11px;text-align:center}.microcopy a{color:var(--green-700)}
+    .text-button{width:100%;margin-top:22px;border:0;color:var(--green-700);background:transparent;font-size:13px;font-weight:800}
+    .why{margin-top:24px;padding:15px;border-radius:14px;background:#f4f8f6;color:var(--muted);font-size:12px}.why strong{color:var(--green-950)}
+    .loading{min-height:480px;display:grid;place-items:center;text-align:center}.spinner{width:42px;height:42px;margin:auto;border:4px solid var(--green-100);border-top-color:var(--green-600);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .loading h2{margin-top:22px;font-size:24px}.loading p{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .success{text-align:center}.success .screen-icon{width:74px;height:74px;margin:35px auto 25px;border-radius:50%;color:white;background:var(--green-600)}
+    .success h2{font-size:32px}.success .lead{max-width:300px;margin:14px auto 25px}
+    .identity-preview{padding:17px;text-align:left;border:1px solid var(--line);border-radius:15px;background:#fbfdfc}
+    .identity-preview strong{display:block;font-size:13px}.identity-preview span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+    .primary{width:100%;min-height:54px;margin-top:22px;border:0;border-radius:14px;color:white;background:var(--green-700);font-weight:850;box-shadow:0 10px 24px rgba(8,122,85,.2)}
+    .primary:hover{background:var(--green-800)}
+    .demo-reset{margin-top:15px;border:0;color:var(--muted);background:transparent;font-size:12px;text-decoration:underline}
+
+    .spec-view{width:min(1120px,calc(100% - 32px));margin:auto;padding:52px 0 70px}
+    .spec-head{max-width:760px}.spec-head span{color:var(--green-700);font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.spec-head h1{margin:12px 0;color:var(--green-950);font-size:clamp(38px,5vw,57px);line-height:1;letter-spacing:-.05em}.spec-head p{color:var(--muted);font-size:17px}
+    .decision{margin:30px 0;padding:24px;border:1px solid #a9ddc6;border-radius:20px;background:var(--green-50)}.decision strong{display:block;color:var(--green-950)}.decision p{margin:6px 0 0;color:var(--muted)}
+    .spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .spec-card{padding:25px;border:1px solid var(--line);border-radius:20px;background:white}.spec-card.wide{grid-column:1/-1}.spec-card h2{margin:0 0 13px;color:var(--green-950);font-size:19px}.spec-card ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}.spec-card li+li{margin-top:8px}
+    .flow{display:flex;align-items:center;gap:10px;overflow:auto;padding-bottom:4px}.flow-step{min-width:160px;padding:14px;border:1px solid var(--line);border-radius:13px;background:#fbfdfc;font-size:13px;font-weight:800}.flow-arrow{color:var(--green-600);font-weight:900}
+    .status-pill{display:inline-flex;margin-top:18px;padding:7px 11px;border-radius:99px;color:#9a5c03;background:#fff2d7;font-size:12px;font-weight:850}
+
+    @media(max-width:880px){.prototype-layout{grid-template-columns:1fr;gap:36px}.context{text-align:center}.context>p{margin-inline:auto}.principles{text-align:left}.phone{max-width:430px;margin:auto}.spec-grid{grid-template-columns:1fr}.spec-card.wide{grid-column:auto}}
+    @media(max-width:560px){.topbar-inner{width:calc(100% - 20px)}.brand span:last-child{display:none}.mode-button{padding:0 10px}.prototype-layout{width:100%;padding:0;display:block}.context{padding:35px 20px}.context h1{font-size:42px}.context>p{font-size:16px}.principles{display:none}.phone{max-width:none;min-height:calc(100vh - 68px);padding:0;border:0;border-radius:0;box-shadow:none}.phone-screen{min-height:calc(100vh - 68px);border:0;border-radius:0}.screen{padding:28px 24px}.spec-view{width:calc(100% - 28px);padding-top:36px}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">$</span><span>SoloPropinas · Etapa 2</span></a>
+      <div class="mode-switch" role="tablist" aria-label="Tipo de vista">
+        <button class="mode-button active" id="prototypeTab" role="tab" aria-selected="true">Vista usuario</button>
+        <button class="mode-button" id="specTab" role="tab" aria-selected="false">Especificaciones</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" id="prototypeView" role="tabpanel" aria-labelledby="prototypeTab">
+      <div class="prototype-layout">
+        <div class="context">
+          <span class="kicker">Maqueta navegable · Etapa 02</span>
+          <h1>Crear una cuenta sin sentir que estás haciendo un trámite.</h1>
+          <p>Diseñada para una persona que está trabajando, usa principalmente el celular y necesita empezar sin contraseñas ni datos que todavía no hacen falta.</p>
+          <div class="principles">
+            <div class="principle"><strong>Una decisión</strong><span>Elegir cómo entrar.</span></div>
+            <div class="principle"><strong>Cero formularios</strong><span>Sin contraseña ni correo manual.</span></div>
+            <div class="principle"><strong>Menos de 1 minuto</strong><span>Continuidad inmediata.</span></div>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="Prototipo móvil de creación de cuenta">
+          <div class="phone-screen">
+            <div class="phone-head">
+              <span class="mini-brand"><span class="mini-mark">$</span> SoloPropinas</span>
+              <span class="step" id="stepText">Paso 1 de 2</span>
+            </div>
+
+            <section class="screen active" id="accountScreen">
+              <div class="screen-icon" aria-hidden="true">＋</div>
+              <h2>Creá tu cuenta gratis</h2>
+              <p class="lead">Elegí una opción. No vas a tener que recordar otra contraseña.</p>
+              <button class="provider" data-provider="Google"><span class="provider-logo">G</span><span>Continuar con Google</span><span class="arrow">→</span></button>
+              <button class="provider" data-provider="Apple"><span class="provider-logo">●</span><span>Continuar con Apple</span><span class="arrow">→</span></button>
+              <p class="microcopy">Al continuar aceptás los <a href="#">Términos</a> y la <a href="#">Política de privacidad</a>.</p>
+              <button class="text-button" type="button">Ya tengo una cuenta</button>
+              <div class="why"><strong>¿Por qué te pedimos una cuenta?</strong><br>Para que tu QR, tu perfil y tus propinas siempre sean tuyos.</div>
+            </section>
+
+            <section class="screen" id="loadingScreen" aria-live="polite">
+              <div class="loading"><div><div class="spinner"></div><h2>Creando tu cuenta…</h2><p>Solo toma unos segundos.</p></div></div>
+            </section>
+
+            <section class="screen success" id="successScreen">
+              <div class="screen-icon" aria-hidden="true">✓</div>
+              <h2>Tu cuenta ya está creada</h2>
+              <p class="lead">Ahora necesitamos confirmar que sos vos para proteger tus propinas.</p>
+              <div class="identity-preview"><strong>Siguiente paso: validar tu identidad</strong><span>Te enviaremos un código a tu WhatsApp. No configuraremos todavía tu cuenta de cobro.</span></div>
+              <button class="primary" type="button">Validar mi identidad</button>
+              <button class="demo-reset" id="resetDemo" type="button">Volver a ver la maqueta</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="specView" role="tabpanel" aria-labelledby="specTab">
+      <div class="spec-view">
+        <div class="spec-head">
+          <span>Solicitud de requerimiento a desarrollo</span>
+          <h1>Etapa 2 · Crear cuenta</h1>
+          <p>Especificación inicial para convertir la maqueta aprobada en una experiencia funcional sin introducir decisiones o datos de etapas posteriores.</p>
+          <span class="status-pill">Estado: maqueta inicial para revisión</span>
+        </div>
+        <div class="decision"><strong>Definición central</strong><p>Crear cuenta identifica el acceso de la persona. No valida todavía su identidad, no crea el QR y no configura dónde recibe el dinero.</p></div>
+        <div class="spec-grid">
+          <article class="spec-card wide"><h2>Flujo principal</h2><div class="flow"><div class="flow-step">1. Elegir Google o Apple</div><span class="flow-arrow">→</span><div class="flow-step">2. Autorizar acceso</div><span class="flow-arrow">→</span><div class="flow-step">3. Cuenta creada</div><span class="flow-arrow">→</span><div class="flow-step">4. Ir a validar identidad</div></div></article>
+          <article class="spec-card"><h2>Perfil y contexto de uso</h2><ul><li>Trabajador gastronómico o de servicios.</li><li>Uso prioritario desde el celular y posiblemente durante su turno.</li><li>Atención dividida y poco tiempo disponible.</li><li>Nivel tecnológico variable; el lenguaje debe ser cotidiano.</li></ul></article>
+          <article class="spec-card"><h2>Reglas de experiencia</h2><ul><li>No solicitar contraseña, nombre, local, fotos ni datos bancarios.</li><li>Mostrar como máximo dos accesos principales.</li><li>Botones táctiles de al menos 48 px.</li><li>Explicar por qué se crea la cuenta sin lenguaje legal o técnico.</li></ul></article>
+          <article class="spec-card"><h2>Estados requeridos</h2><ul><li>Inicial.</li><li>Conectando con proveedor.</li><li>Cuenta creada.</li><li>Acceso cancelado por el usuario.</li><li>Error de conexión con opción clara de reintentar.</li><li>Cuenta existente: iniciar sesión sin duplicarla.</li></ul></article>
+          <article class="spec-card"><h2>Seguridad y datos</h2><ul><li>Usar OAuth oficial de Google y Apple.</li><li>No almacenar contraseñas de los proveedores.</li><li>Registrar consentimiento de términos y privacidad.</li><li>No considerar el correo del proveedor como validación de identidad para cobrar.</li></ul></article>
+          <article class="spec-card wide"><h2>Criterios de aceptación</h2><ul><li>Una persona puede crear o recuperar su cuenta con Google o Apple sin completar formularios.</li><li>El proceso informa progreso, éxito, cancelación y error con mensajes comprensibles.</li><li>La interfaz funciona con teclado, lector de pantalla y celulares pequeños.</li><li>Al finalizar, el único próximo paso destacado es “Validar mi identidad”.</li><li>Ninguna pantalla solicita información perteneciente a personalización, cobro o generación del QR.</li></ul></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const views = {
+      prototype: { tab: document.querySelector('#prototypeTab'), panel: document.querySelector('#prototypeView') },
+      spec: { tab: document.querySelector('#specTab'), panel: document.querySelector('#specView') }
+    };
+    function showView(name) {
+      Object.entries(views).forEach(([key, view]) => {
+        const active = key === name;
+        view.tab.classList.toggle('active', active);
+        view.tab.setAttribute('aria-selected', String(active));
+        view.panel.classList.toggle('active', active);
+      });
+    }
+    views.prototype.tab.addEventListener('click', () => showView('prototype'));
+    views.spec.tab.addEventListener('click', () => showView('spec'));
+
+    const screens = ['accountScreen', 'loadingScreen', 'successScreen'];
+    function showScreen(id) {
+      screens.forEach(screenId => document.querySelector(`#${screenId}`).classList.toggle('active', screenId === id));
+      document.querySelector('#stepText').textContent = id === 'successScreen' ? 'Paso 2 de 2' : 'Paso 1 de 2';
+    }
+    document.querySelectorAll('[data-provider]').forEach(button => button.addEventListener('click', () => {
+      showScreen('loadingScreen');
+      window.setTimeout(() => showScreen('successScreen'), 850);
+    }));
+    document.querySelector('#resetDemo').addEventListener('click', () => showScreen('accountScreen'));
+  </script>
+</body>
+</html>
