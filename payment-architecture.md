@@ -40,6 +40,8 @@ Mercado Pago, Naranja X, Ualá y la wallet del celular son opciones de pago visi
 
 ## 3. Responsabilidades del PSP
 
+- Resolver alias, CBU y CVU mediante la infraestructura interoperable que corresponda y devolver un resultado verificable de entidad, tipo de cuenta y titular enmascarado.
+- Verificar, antes de habilitar acreditaciones, que la titularidad del destino sea compatible con la identidad/KYC del trabajador; una casilla de confirmación no reemplaza esta verificación.
 - Estar inscripto o habilitado para la función que efectivamente presta y figurar en los registros aplicables del BCRA.
 - Verificar identidad, mayoría de edad y titularidad de la cuenta del trabajador cuando corresponda.
 - Crear la orden, solicitar autorización y devolver un identificador único.

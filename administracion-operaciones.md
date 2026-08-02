@@ -4,6 +4,10 @@ Versión: 2 de agosto de 2026.
 
 ## Antes de contratar al PSP
 
+- Definir un solo proveedor principal para la etapa 5: debe resolver alias, CBU y CVU, validar titularidad contra KYC, acreditar la propina directamente y soportar la separación de importes del modelo SoloPropinas.
+- No contratar una integración distinta para Mercado Pago, Ualá, Naranja X o MODO: son posibles destinos de acreditación o medios de pago, cuya cobertura debe confirmar el proveedor principal.
+- Solicitar al proveedor la descripción contractual de su acceso a la red interoperable aplicable para resolver alias/CBU/CVU (por ejemplo, COELSA mediante una entidad adherida), incluidos campos devueltos, cobertura, límites y tratamiento de datos.
+- Exigir ambiente de prueba para validar: alias existente e inexistente, CBU/CVU, entidad, titular enmascarado, coincidencia y no coincidencia de titularidad, cuenta no habilitada y tiempos de respuesta.
 - Verificar razón social, CUIT, función y registro aplicable ante BCRA.
 - Confirmar por contrato que la propina se acredita directamente al trabajador.
 - Exigir separación entre propina, servicio SoloPropinas, impuestos y costos del PSP.
