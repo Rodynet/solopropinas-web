@@ -411,7 +411,7 @@
           "Las reseñas se muestran cuando existen, pero el trabajador no puede cargarlas manualmente.",
           "Definir moderación, formatos, peso máximo y política sobre fotografías de menores o terceras personas."
         ],
-        developerRequest: "Implementar un asistente mobile-first para cualquier trabajador de servicios. Permitir buscar lugares por nombre o dirección con Google Places, asociar varios, usar modalidad independiente y cargar manualmente uno que no aparezca. Después de nombre, actividad, lugares y foto laboral, formular preguntas breves y sugerencias. Enviar únicamente respuestas informadas al modelo IA, generar un borrador, permitir editarlo o mejorarlo y exigir confirmación explícita antes de publicar. Registrar prompt, modelo, versión sugerida, versión final y consentimiento; nunca publicar automáticamente.",
+        developerRequest: "Implementar un asistente mobile-first para cualquier trabajador de servicios. Permitir buscar lugares por nombre o dirección con Google Places, asociar varios, usar modalidad independiente y cargar manualmente uno que no aparezca. Guardar por cada lugar Place ID, enlace de Google Maps y, cuando el negocio lo entregue, su enlace oficial para solicitar reseñas; esta carga se realiza una sola vez en el registro del lugar, no mediante un segundo QR del trabajador. Después de nombre, actividad, lugares y foto laboral, formular preguntas breves y sugerencias. Enviar únicamente respuestas informadas al modelo IA, generar un borrador, permitir editarlo o mejorarlo y exigir confirmación explícita antes de publicar. Registrar prompt, modelo, versión sugerida, versión final y consentimiento; nunca publicar automáticamente.",
         screens: [
           { name: "Actividad y lugares de trabajo", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
           { name: "Foto laboral o avatar", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
@@ -474,9 +474,10 @@
           "Maqueta resumida a dos vistas permanentes: Mi QR y Turno.",
           "Se eliminó la guía repetida porque el trabajador ya recibió esas indicaciones en la etapa anterior.",
           "Las fotos y el mensaje presentan la propina como agradecimiento a una persona, no como el uso de una aplicación.",
-          "La vista para el cliente no muestra recomendaciones operativas: puede maximizarse y ocupar toda la pantalla del celular."
+          "La vista para el cliente no muestra recomendaciones operativas: puede maximizarse y ocupar toda la pantalla del celular.",
+          "Antes de mostrar el QR, el trabajador elige el lugar activo del turno; ese dato acompaña la operación y evita pedirle al cliente que elija el lugar al evaluar."
         ],
-        developerRequest: "Implementar un espacio de trabajo con pestañas permanentes Mi QR y Turno. Agregar Mostrar en pantalla completa: debe ocultar navegación, instrucciones y controles, ampliar el QR y mostrar ← Volver para minimizar. Turno debe mostrar dinero recibido, cantidad, promedio y misiones expresadas por cantidad de usos. No solicitar ni mostrar estrellas en esta etapa.",
+        developerRequest: "Implementar un espacio de trabajo con pestañas permanentes Mi QR y Turno. Antes de usar el QR, permitir al trabajador seleccionar su lugar activo entre sus lugares previamente vinculados; guardar ese lugar en cada operación y mostrarlo junto al QR, sin modificar el QR permanente. Agregar Mostrar en pantalla completa: debe ocultar navegación, instrucciones y controles, ampliar el QR y mostrar ← Volver para minimizar. Turno debe mostrar dinero recibido, cantidad, promedio y misiones expresadas por cantidad de usos. No solicitar ni mostrar estrellas en esta etapa.",
         screens: [
           { name: "Mi QR personal", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" },
           { name: "Turno: resultados y misiones", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" }
@@ -518,14 +519,14 @@
           "Después de una propina acreditada, el cliente puede puntuar la atención de la persona con un toque.",
           "Esa puntuación es una métrica interna de SoloPropinas: no se publica en Google ni se presenta como reseña pública.",
           "La opinión sobre el lugar se deriva a su ficha correcta de Google usando el Place ID; el cliente confirma la publicación dentro de Google.",
-          "Una persona puede trabajar en varios lugares: cada relación conserva su Place ID y el cliente puede elegir el lugar antes de opinar.",
+          "Una persona puede trabajar en varios lugares: cada relación conserva su Place ID y su enlace oficial de reseñas. El trabajador elige el lugar activo antes de mostrar su QR.",
           "No mezclar las estrellas de Google del establecimiento con la métrica de atención de la persona.",
           "Conservar atribuciones, enlaces, políticas de visualización y límites de almacenamiento exigidos por Google."
         ],
-        developerRequest: "Después de una propina acreditada, implementar una valoración interna de 1 a 5 estrellas sobre la atención del trabajador, en un solo toque, sin registro ni texto obligatorio. Guardarla como métrica privada ligada a orden, trabajador, lugar activo y fecha, con límites contra duplicados. Modelar la relación trabajador-lugar con Place ID por lugar; si hay varios lugares, permitir elegir el correcto. Para el lugar, construir un enlace de Google Maps desde su Place ID: SoloPropinas no publica reseñas por el cliente, Google pide autenticación y confirmación. Separar estrictamente la métrica personal interna de las estrellas públicas del establecimiento.",
+        developerRequest: "Después de una propina acreditada, implementar una valoración interna de 1 a 5 estrellas sobre la atención del trabajador, en un solo toque, sin registro ni texto obligatorio. Guardarla como métrica privada ligada a orden, trabajador, lugar activo y fecha, con límites contra duplicados. Modelar la relación trabajador-lugar con Place ID y enlace oficial de reseñas por lugar. El trabajador selecciona su lugar activo al iniciar el turno y ese dato se guarda con la operación: el cliente no elige el lugar. Para el lugar, abrir el enlace oficial previamente registrado o, como respaldo, su ficha de Google Maps mediante Place ID. SoloPropinas no publica reseñas por el cliente; Google pide autenticación y confirmación. Separar estrictamente la métrica personal interna de las estrellas públicas del establecimiento.",
         screens: [
           { name: "Valorar atención de la persona", status: "Publicado", url: "etapa-9-reputacion-google.html" },
-          { name: "Elegir lugar de atención", status: "Publicado", url: "etapa-9-reputacion-google.html" },
+          { name: "Lugar activo del turno", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" },
           { name: "Opinar sobre el lugar en Google", status: "Publicado", url: "etapa-9-reputacion-google.html" }
         ]
       },
