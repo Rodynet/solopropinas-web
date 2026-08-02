@@ -12,7 +12,7 @@ SoloPropinas es una plataforma tecnológica para trabajadores de servicios. La i
 2. El producto está dirigido a cualquier trabajador de servicios cuya actividad pueda beneficiarse de identidad, reconocimiento, herramientas y propinas voluntarias.
 3. La propina pertenece íntegramente al trabajador. SoloPropinas no la recibe, custodia, distribuye, compensa, retiene ni descuenta.
 4. Un PSP regulado procesa la orden y acredita directamente en la cuenta verificada del trabajador, según sus tiempos y condiciones.
-5. El cliente paga a SoloPropinas un servicio tecnológico separado por facilitar la experiencia y orquestar técnicamente la entrega del saldo. El precio, impuestos y comprobante se informan separadamente y nunca reducen la propina.
+5. El cliente paga a SoloPropinas un servicio tecnológico separado por facilitar la experiencia y orquestar técnicamente la entrega del saldo. El valor inicial definido es el 0,9% de la propina; el porcentaje y su importe se muestran juntos antes de confirmar. Los impuestos y el comprobante se informan separadamente y el servicio nunca reduce la propina.
 6. SoloPropinas factura únicamente su servicio tecnológico. La propina no es precio, ingreso ni base de facturación de SoloPropinas.
 7. Ninguna pantalla garantiza acreditación inmediata. Los estados son pendiente, acreditado o rechazado y deben ser trazables.
 8. La identidad legal, mayoría de edad y titularidad del destino de cobro se verifican de forma proporcional al riesgo.

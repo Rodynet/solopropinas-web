@@ -1,12 +1,270 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Etapa 8 · Propina y servicio · SoloPropinas</title><style>
-:root{--g:#087a55;--gd:#073d31;--gl:#effbf5;--ink:#17332b;--muted:#65756f;--line:#dce8e3;--amber:#9a5c03}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f8f6;font-family:Inter,system-ui,sans-serif}button,input{font:inherit}button{cursor:pointer}.top{height:68px;padding:0 max(16px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}.brand{font-weight:900;color:var(--gd);text-decoration:none}.mode{padding:4px;border:1px solid var(--line);border-radius:12px}.mode button{height:34px;border:0;border-radius:9px;color:var(--muted);background:transparent;font-size:12px;font-weight:800}.mode button.active{color:var(--g);background:var(--gl)}.view{display:none}.view.active{display:block}.layout{width:min(1120px,calc(100% - 32px));min-height:calc(100vh - 68px);margin:auto;padding:45px 0;display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.copy small,.spec small{color:var(--g);font-weight:900}.copy h1,.spec h1{margin:14px 0;color:var(--gd);font-size:clamp(42px,5vw,67px);line-height:1;letter-spacing:-.05em}.copy p{max-width:590px;color:var(--muted);font-size:18px;line-height:1.5}.phone{padding:14px;border:1px solid #cbdcd5;border-radius:38px;background:#fafcfb;box-shadow:0 24px 70px #063e2e22}.phone-in{min-height:690px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:#fff}.head{height:60px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;font-size:11px}.head strong{font-size:14px}.demo{padding:7px;color:#70571e;background:#fff7e5;text-align:center;font-size:9px}.screen{display:none;padding:23px 27px}.screen.active{display:block}.screen h2{margin:0;color:var(--gd);font-size:28px;line-height:1.05}.lead{margin:8px 0 15px;color:var(--muted);font-size:12px}.back{margin-bottom:12px;border:0;color:var(--muted);background:transparent;font-size:11px}.hero-photo{height:185px;margin:-23px -27px 0;background:url('assets/worker-profile.png') center/cover}.avatar{width:76px;height:76px;margin:-38px auto 8px;border:4px solid #fff;border-radius:50%;background:url('assets/worker-profile.png') center/cover}.center{text-align:center}.role{color:var(--g);font-size:10px;font-weight:850}.bio{margin:12px 0;padding:11px;border-radius:11px;background:#f5f8f6;color:var(--muted);font-size:10px}.primary,.secondary{width:100%;min-height:48px;margin-top:12px;border-radius:13px;font-weight:850}.primary{border:0;color:#fff;background:var(--g)}.secondary{border:1px solid var(--line);color:var(--g);background:#fff}.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.amount{height:55px;border:1px solid var(--line);border-radius:13px;background:#fff;font-weight:900}.amount.active{border:2px solid var(--g);color:var(--g);background:var(--gl)}.other{width:100%;height:46px;margin-top:9px;padding:0 12px;border:1px solid var(--line);border-radius:12px}.ownership{margin-top:12px;padding:11px;border-radius:12px;color:var(--g);background:var(--gl);font-size:10px}.checkout{padding:15px;border:1px solid var(--line);border-radius:16px;background:#fbfdfc}.row{display:flex;justify-content:space-between;gap:12px;font-size:11px}.row+.row{margin-top:10px}.row span{color:var(--muted)}.row.total{padding-top:12px;border-top:1px solid var(--line);font-size:16px;font-weight:900}.separate{margin:12px 0;padding:11px;border-left:3px solid var(--g);border-radius:9px;background:var(--gl);font-size:9px}.psp{padding:11px;border-radius:11px;background:#f4f8f6;color:var(--muted);font-size:9px}.state-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:10px}.state-buttons button{padding:7px 3px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:8px}.status-icon{width:68px;height:68px;margin:28px auto 15px;display:grid;place-items:center;border-radius:50%;color:#fff;background:var(--g);font-size:27px}.pending .status-icon{background:#d39a2c}.rejected .status-icon{background:#b94a48}.rating{margin-top:17px;padding-top:15px;border-top:1px solid var(--line)}.stars button{border:0;color:#c7d0cc;background:transparent;font-size:27px}.stars button.active{color:#f2aa18}.spec{width:min(1120px,calc(100% - 32px));margin:auto;padding:50px 0}.decision{margin:20px 0;padding:20px;border:1px solid #a9ddc6;border-radius:18px;background:var(--gl)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.card.wide{grid-column:1/-1}.card h2{color:var(--gd);font-size:18px}.card li{margin:7px 0;color:var(--muted);font-size:13px}@media(max-width:850px){.layout{grid-template-columns:1fr}.copy{text-align:center}.phone{max-width:430px;margin:auto}.grid{grid-template-columns:1fr}.card.wide{grid-column:auto}}@media(max-width:520px){.layout{width:100%;padding:0}.copy{padding:30px 20px}.phone{padding:0;border:0;border-radius:0}.phone-in{border:0;border-radius:0}}
-</style></head><body><header class="top"><a class="brand" href="directorio.html">$ SoloPropinas · Etapa 8</a><div class="mode"><button class="mode-btn active" data-view="demoView">Vista cliente</button><button class="mode-btn" data-view="specView">Especificaciones</button></div></header><main>
-<section class="view active" id="demoView"><div class="layout"><div class="copy"><small>MAQUETA · SIN PAGOS REALES</small><h1>La propina y el servicio son dos conceptos distintos.</h1><p>El cliente reconoce a una persona, elige una propina voluntaria y paga a SoloPropinas un servicio tecnológico separado. El trabajador recibe la propina completa mediante el PSP.</p></div><div class="phone"><div class="phone-in"><div class="head"><strong>$ SoloPropinas</strong><span id="label">Perfil</span></div><div class="demo">Demostración · no se realizará ningún cobro</div>
-<section class="screen active" id="profile"><div class="hero-photo"></div><div class="avatar"></div><div class="center"><h2>Reconocé el trabajo de Juan</h2><div class="role">Atención al público · Café Central</div><div class="bio">“Me importa que cada persona se sienta bienvenida y disfrute una atención cercana.”</div></div><button class="primary" data-next="amount">Dejar una propina voluntaria</button></section>
-<section class="screen" id="amount"><button class="back" data-next="profile">← Volver a Juan</button><h2>Propina voluntaria para Juan</h2><p class="lead">El monto pertenece a Juan. Elegí cuánto querés dejarle.</p><div class="amounts"><button class="amount" data-amount="1000">$1.000</button><button class="amount active" data-amount="1500">$1.500</button><button class="amount" data-amount="2000">$2.000</button></div><input class="other" id="other" inputmode="numeric" placeholder="Otro monto"><div class="ownership">Juan recibirá el 100% de la propina en su cuenta verificada. SoloPropinas no la recibe ni la descuenta.</div><button class="primary" data-next="confirm">Continuar</button></section>
-<section class="screen" id="confirm"><button class="back" data-next="amount">← Cambiar propina</button><h2>Confirmá los importes</h2><p class="lead">Dos conceptos separados y transparentes.</p><div class="checkout"><div class="row"><span>Propina voluntaria para Juan</span><strong id="tip">$1.500</strong></div><div class="row"><span>Servicio tecnológico SoloPropinas</span><strong id="fee">$150</strong></div><div class="row"><span>Impuestos del servicio</span><strong id="tax">A informar</strong></div><div class="row total"><span>Total a pagar</span><strong id="total">$1.650*</strong></div><div class="row"><span>Juan recibe</span><strong id="receives">$1.500</strong></div></div><div class="separate">El cliente paga el servicio SoloPropinas. Nunca se descuenta de la propina ni se traslada al trabajador. SoloPropinas emitirá un comprobante separado por su servicio.</div><div class="psp"><strong>Procesado por: [PSP regulado pendiente de contratación]</strong><br>El PSP acreditará directamente según sus tiempos y condiciones.</div><label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;color:var(--muted);font-size:9px"><input id="paymentConsent" type="checkbox" style="margin-top:2px;accent-color:var(--g)"><span>Confirmo la propina voluntaria, el precio separado del servicio y el total informado.</span></label><button class="primary" id="simulate" disabled>Simular envío al PSP</button><button class="secondary" data-next="amount">Cancelar</button></section>
-<section class="screen center" id="status"><div class="status-icon" id="statusIcon">…</div><h2 id="statusTitle">Pago pendiente</h2><p class="lead" id="statusCopy">El PSP está verificando la operación. Todavía no informamos la propina como acreditada.</p><div class="state-buttons"><button data-state="pending">Pendiente</button><button data-state="success">Acreditado</button><button data-state="rejected">Rechazado</button></div><button class="secondary" data-next="confirm">Ver comprobante y detalle</button><div class="rating" id="rating" hidden><strong>¿Cómo fue la atención de Juan?</strong><div class="stars"><button>★</button><button>★</button><button>★</button><button>★</button><button>★</button></div><p class="lead">Opcional. Solo una valoración por experiencia verificada.</p></div></section>
-</div></div></div></section>
-<section class="view" id="specView"><div class="spec"><small>SOLICITUD DE REQUERIMIENTO A DESARROLLO</small><h1>Etapa 8 · Propina, servicio y PSP</h1><div class="decision"><strong>Definición central</strong><p>La propina pertenece íntegramente al trabajador. El cliente paga por separado el servicio tecnológico de SoloPropinas. Un PSP regulado procesa y acredita directamente; SoloPropinas no custodia fondos.</p></div><div class="grid"><article class="card"><h2>Checkout</h2><ul><li>Mostrar trabajador, actividad y lugar.</li><li>Separar propina, precio SoloPropinas, impuestos y total.</li><li>Informar el neto del trabajador igual a la propina.</li><li>El servicio no es opcional ni deducible del trabajador bajo este modelo.</li><li>Emitir comprobante propio del servicio.</li></ul></article><article class="card"><h2>PSP y estados</h2><ul><li>Identificar PSP antes de confirmar.</li><li>Pendiente, acreditado, rechazado, cancelado y revertido.</li><li>Éxito solo por webhook firmado/verificación.</li><li>Idempotencia, comprobante y reintento sin duplicación.</li><li>Tiempos y condiciones pertenecen al PSP.</li></ul></article><article class="card"><h2>Consumidor</h2><ul><li>Voluntariedad de la propina y precio completo del servicio.</li><li>Datos del proveedor, CUIT, domicilio y reclamos antes de producción.</li><li>Cancelación previa y procedimiento para errores/reversos.</li><li>Número de caso y coordinación trazable con PSP.</li></ul></article><article class="card"><h2>Reputación</h2><ul><li>Estrellas solo después de acreditación confirmada.</li><li>Una reseña por operación verificada.</li><li>Opcional, con réplica, denuncia y moderación.</li><li>Separar trabajador y establecimiento.</li></ul></article><article class="card wide"><h2>Criterios de aceptación</h2><ul><li>El cliente sabe a quién pertenece la propina, quién procesa y qué cobra SoloPropinas.</li><li>El trabajador recibe íntegramente la propina.</li><li>La interfaz nunca promete acreditación inmediata.</li><li>SoloPropinas no registra el monto ajeno como ingreso propio.</li><li>No se habilitan pagos hasta completar PSP, contratos, factura, privacidad, soporte y seguridad.</li></ul></article></div></div></section></main><script>
-document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.mode-btn').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view))}));const screens=['profile','amount','confirm','status'],labels={profile:'Perfil',amount:'Propina',confirm:'Confirmar',status:'Estado'};function show(id){screens.forEach(x=>document.querySelector('#'+x).classList.toggle('active',x===id));document.querySelector('#label').textContent=labels[id]}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.next)));let amount=1500;const money=n=>'$'+new Intl.NumberFormat('es-AR').format(n);function update(){const fee=150;document.querySelector('#tip').textContent=money(amount);document.querySelector('#fee').textContent=money(fee);document.querySelector('#total').textContent=money(amount+fee)+'*';document.querySelector('#receives').textContent=money(amount)}document.querySelectorAll('.amount').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.amount').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('#other').value='';amount=Number(b.dataset.amount);update()}));document.querySelector('#other').addEventListener('input',e=>{const n=Number(e.target.value.replace(/\D/g,''));if(n){document.querySelectorAll('.amount').forEach(x=>x.classList.remove('active'));amount=n;update()}});document.querySelector('#paymentConsent').addEventListener('change',e=>document.querySelector('#simulate').disabled=!e.target.checked);document.querySelector('#simulate').addEventListener('click',()=>{show('status');setState('pending')});function setState(state){const screen=document.querySelector('#status'),icon=document.querySelector('#statusIcon'),title=document.querySelector('#statusTitle'),copy=document.querySelector('#statusCopy'),rating=document.querySelector('#rating');screen.className='screen active center '+state;rating.hidden=true;if(state==='pending'){icon.textContent='…';title.textContent='Pago pendiente';copy.textContent='El PSP está verificando la operación. Todavía no informamos la propina como acreditada.'}if(state==='success'){icon.textContent='✓';title.textContent='Propina acreditada';copy.textContent=`El PSP confirmó ${money(amount)} acreditados directamente a Juan. El servicio SoloPropinas tendrá comprobante separado.`;rating.hidden=false}if(state==='rejected'){icon.textContent='!';title.textContent='El pago no se realizó';copy.textContent='El PSP rechazó la operación. No se acreditó la propina ni se cobró el servicio. Podés intentar nuevamente.'}}document.querySelectorAll('[data-state]').forEach(b=>b.addEventListener('click',()=>setState(b.dataset.state)));document.querySelectorAll('.stars button').forEach((b,i,all)=>b.addEventListener('click',()=>all.forEach((x,j)=>x.classList.toggle('active',j<=i))));update();
-</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Etapa 8 · Propina y servicio · SoloPropinas</title>
+<style>
+:root{--g:#087a55;--gd:#073d31;--gl:#effbf5;--ink:#17332b;--muted:#65756f;--line:#dce8e3;--amber:#9a5c03}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f8f6;font-family:Inter,system-ui,sans-serif}button,input{font:inherit}button{cursor:pointer}.top{height:68px;padding:0 max(16px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}.brand{font-weight:900;color:var(--gd);text-decoration:none}.mode{padding:4px;border:1px solid var(--line);border-radius:12px}.mode button{height:34px;border:0;border-radius:9px;color:var(--muted);background:transparent;font-size:12px;font-weight:800}.mode button.active{color:var(--g);background:var(--gl)}.view{display:none}.view.active{display:block}.layout{width:min(1120px,calc(100% - 32px));min-height:calc(100vh - 68px);margin:auto;padding:45px 0;display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.copy small,.spec small{color:var(--g);font-weight:900}.copy h1,.spec h1{margin:14px 0;color:var(--gd);font-size:clamp(42px,5vw,67px);line-height:1;letter-spacing:-.05em}.copy p{max-width:590px;color:var(--muted);font-size:18px;line-height:1.5}.phone{padding:14px;border:1px solid #cbdcd5;border-radius:38px;background:#fafcfb;box-shadow:0 24px 70px #063e2e22}.phone-in{min-height:690px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:#fff}.head{height:60px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;font-size:11px}.head strong{font-size:14px}.demo{padding:7px;color:#70571e;background:#fff7e5;text-align:center;font-size:9px}.screen{display:none;padding:23px 27px}.screen.active{display:block}.screen h2{margin:0;color:var(--gd);font-size:28px;line-height:1.05}.lead{margin:8px 0 15px;color:var(--muted);font-size:12px}.back{margin-bottom:12px;border:0;color:var(--muted);background:transparent;font-size:11px}.hero-photo{height:185px;margin:-23px -27px 0;background:url('worker-profile.png') center/cover}.avatar{width:76px;height:76px;margin:-38px auto 8px;border:4px solid #fff;border-radius:50%;background:url('worker-profile.png') center/cover}.center{text-align:center}.role{color:var(--g);font-size:10px;font-weight:850}.bio{margin:12px 0;padding:11px;border-radius:11px;background:#f5f8f6;color:var(--muted);font-size:10px}.primary,.secondary{width:100%;min-height:48px;margin-top:12px;border-radius:13px;font-weight:850}.primary{border:0;color:#fff;background:var(--g)}.secondary{border:1px solid var(--line);color:var(--g);background:#fff}.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.amount{height:55px;border:1px solid var(--line);border-radius:13px;background:#fff;font-weight:900}.amount.active{border:2px solid var(--g);color:var(--g);background:var(--gl)}.other{width:100%;height:46px;margin-top:9px;padding:0 12px;border:1px solid var(--line);border-radius:12px}.ownership{margin-top:12px;padding:11px;border-radius:12px;color:var(--g);background:var(--gl);font-size:10px}.checkout{padding:15px;border:1px solid var(--line);border-radius:16px;background:#fbfdfc}.row{display:flex;justify-content:space-between;gap:12px;font-size:11px}.row+.row{margin-top:10px}.row span{color:var(--muted)}.row.total{padding-top:12px;border-top:1px solid var(--line);font-size:16px;font-weight:900}.separate{margin:12px 0;padding:11px;border-left:3px solid var(--g);border-radius:9px;background:var(--gl);font-size:9px}.psp{padding:11px;border-radius:11px;background:#f4f8f6;color:var(--muted);font-size:9px}.state-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:10px}.state-buttons button{padding:7px 3px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:8px}.status-icon{width:68px;height:68px;margin:28px auto 15px;display:grid;place-items:center;border-radius:50%;color:#fff;background:var(--g);font-size:27px}.pending .status-icon{background:#d39a2c}.rejected .status-icon{background:#b94a48}.rating{margin-top:17px;padding-top:15px;border-top:1px solid var(--line)}.stars button{border:0;color:#c7d0cc;background:transparent;font-size:27px}.stars button.active{color:#f2aa18}.spec{width:min(1120px,calc(100% - 32px));margin:auto;padding:50px 0}.decision{margin:20px 0;padding:20px;border:1px solid #a9ddc6;border-radius:18px;background:var(--gl)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.card.wide{grid-column:1/-1}.card h2{color:var(--gd);font-size:18px}.card li{margin:7px 0;color:var(--muted);font-size:13px}@media(max-width:850px){.layout{grid-template-columns:1fr}.copy{text-align:center}.phone{max-width:430px;margin:auto}.grid{grid-template-columns:1fr}.card.wide{grid-column:auto}}@media(max-width:520px){.layout{width:100%;padding:0}.copy{padding:30px 20px}.phone{padding:0;border:0;border-radius:0}.phone-in{border:0;border-radius:0}}
+</style>
+</head>
+<body>
+<header class="top">
+<a class="brand" href="directorio.html">$ SoloPropinas · Etapa 8</a>
+<div class="mode">
+<button class="mode-btn active" data-view="demoView">Vista cliente</button>
+<button class="mode-btn" data-view="specView">Especificaciones</button>
+</div>
+</header>
+<main>
+<section class="view active" id="demoView">
+<div class="layout">
+<div class="copy">
+<h1>La propina y el servicio son dos conceptos distintos.</h1>
+<p>El cliente reconoce a una persona, elige una propina voluntaria y paga a SoloPropinas un servicio separado. El trabajador recibe la propina completa en su cuenta.</p>
+</div>
+<div class="phone">
+<div class="phone-in">
+<div class="head">
+<strong>$ SoloPropinas</strong>
+<span id="label">Perfil</span>
+</div>
+<section class="screen active" id="profile">
+<div class="hero-photo">
+</div>
+<div class="avatar">
+</div>
+<div class="center">
+<h2>Reconocé el trabajo de Juan</h2>
+<div class="role">Atención al público · Café Central</div>
+<div class="bio">“Me importa que cada persona se sienta bienvenida y disfrute una atención cercana.”</div>
+</div>
+<button class="primary" data-next="amount">Dejar una propina voluntaria</button>
+</section>
+<section class="screen" id="amount">
+<button class="back" data-next="profile">← Volver a Juan</button>
+<h2>Propina voluntaria para Juan</h2>
+<p class="lead">El monto pertenece a Juan. Elegí cuánto querés dejarle.</p>
+<div class="amounts">
+<button class="amount" data-amount="1000">$1.000</button>
+<button class="amount active" data-amount="1500">$1.500</button>
+<button class="amount" data-amount="2000">$2.000</button>
+</div>
+<input class="other" id="other" inputmode="numeric" placeholder="Otro monto">
+<div class="ownership">Juan recibirá el 100% de la propina en su cuenta verificada. SoloPropinas no la recibe ni la descuenta.</div>
+<button class="primary" data-next="confirm">Continuar</button>
+</section>
+<section class="screen" id="confirm">
+<button class="back" data-next="amount">← Cambiar propina</button>
+<h2>Confirmá los importes</h2>
+<p class="lead">Dos conceptos separados y transparentes.</p>
+<div class="checkout">
+<div class="row">
+<span>Propina voluntaria para Juan</span>
+<strong id="tip">$1.500</strong>
+</div>
+<div class="row">
+<span>Servicio SoloPropinas · 0,9%</span>
+<strong id="fee">$14</strong>
+</div>
+<div class="row">
+<span>Impuestos del servicio</span>
+<strong id="tax">A informar</strong>
+</div>
+<div class="row total">
+<span>Total a pagar</span>
+<strong id="total">$1.514*</strong>
+</div>
+<div class="row">
+<span>Juan recibe</span>
+<strong id="receives">$1.500</strong>
+</div>
+</div>
+<div class="separate">
+<strong>El servicio es siempre proporcional: 0,9% de la propina.</strong>
+<br>Si la propina es menor, el costo también es menor. Lo paga el cliente por separado y nunca se descuenta de lo que recibe Juan.</div>
+<button class="primary" data-next="payment">Aceptar y elegir cómo pagar</button>
+<p style="margin:8px 4px 0;color:var(--muted);font-size:8.5px;text-align:center">Al continuar confirmás la propina voluntaria, el servicio del 0,9% y el total informado.</p>
+<button class="secondary" data-next="amount">Cancelar</button>
+</section>
+<section class="screen" id="payment">
+<button class="back" data-next="confirm">← Volver al detalle</button>
+<h2>¿Cómo querés pagar?</h2>
+<p class="lead">Elegí la aplicación que usás. Los tiempos de acreditación dependen del proveedor seleccionado.</p>
+<div style="display:grid;gap:8px">
+<button class="secondary pay-option" data-pay="Mercado Pago" style="margin:0;text-align:left;padding:0 15px">Mercado Pago <span style="float:right">→</span>
+</button>
+<button class="secondary pay-option" data-pay="Naranja X" style="margin:0;text-align:left;padding:0 15px">Naranja X <span style="float:right">→</span>
+</button>
+<button class="secondary pay-option" data-pay="Ualá" style="margin:0;text-align:left;padding:0 15px">Ualá <span style="float:right">→</span>
+</button>
+<button class="secondary pay-option" data-pay="Wallet del celular" style="margin:0;text-align:left;padding:0 15px">Wallet del celular <span style="float:right">→</span>
+</button>
+</div>
+<div class="psp" style="margin-top:12px">La propina se acredita directamente a Juan según los tiempos y condiciones del proveedor elegido.</div>
+</section>
+<section class="screen center" id="status">
+<div class="status-icon" id="statusIcon">…</div>
+<h2 id="statusTitle">Pago pendiente</h2>
+<p class="lead" id="statusCopy">El PSP está verificando la operación. Todavía no informamos la propina como acreditada.</p>
+<div class="state-buttons">
+<button data-state="pending">Pendiente</button>
+<button data-state="success">Acreditado</button>
+<button data-state="rejected">Rechazado</button>
+</div>
+<div id="documents" hidden style="margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#fbfdfc;text-align:left">
+<strong style="display:block;color:var(--gd);font-size:11px">Comprobantes de esta operación</strong>
+<a href="#" style="display:block;margin-top:9px;color:var(--g);font-size:10px;font-weight:850">Ver comprobante del proveedor de pago →</a>
+<a href="factura-solopropinas-ejemplo.html" download style="display:block;margin-top:8px;color:var(--g);font-size:10px;font-weight:850">Descargar factura de SoloPropinas →</a>
+<p style="margin:9px 0 0;color:var(--muted);font-size:8px">Se emite a Consumidor Final. Si necesitás otros datos fiscales, consultá <a href="legales.html#facturacion" style="color:var(--g);font-weight:800">Información legal y facturación</a>.</p>
+</div>
+<button class="secondary" data-next="confirm">Volver al detalle</button>
+<div class="rating" id="rating" hidden>
+<strong>¿Cómo fue la atención de Juan?</strong>
+<div class="stars">
+<button>★</button>
+<button>★</button>
+<button>★</button>
+<button>★</button>
+<button>★</button>
+</div>
+<p class="lead">Opcional. Solo una valoración por experiencia verificada.</p>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="view" id="specView">
+<div class="spec">
+<small>SOLICITUD DE REQUERIMIENTO A DESARROLLO</small>
+<h1>Etapa 8 · Propina, servicio y medio de pago</h1>
+<div class="decision">
+<strong>Definición central</strong>
+<p>La propina pertenece íntegramente al trabajador. El cliente paga un servicio separado equivalente inicialmente al 0,9% de la propina. El proveedor elegido procesa y acredita directamente; SoloPropinas no custodia fondos.</p>
+</div>
+<div class="grid">
+<article class="card">
+<h2>Checkout</h2>
+<ul>
+<li>Mostrar trabajador, actividad y lugar.</li>
+<li>Separar propina, servicio SoloPropinas del 0,9%, impuestos y total.</li>
+<li>Mostrar el porcentaje y el importe calculado para comunicar que el costo es proporcional, no fijo.</li>
+<li>Informar el neto del trabajador igual a la propina.</li>
+<li>Reemplazar el checkbox por la leyenda: al continuar confirma los importes informados.</li>
+<li>Emitir comprobante propio del servicio.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Medio de pago y estados</h2>
+<ul>
+<li>Después de aceptar el resumen, ofrecer Mercado Pago, Naranja X, Ualá y wallet del celular.</li>
+<li>La disponibilidad real depende del dispositivo y de la integración de cada proveedor.</li>
+<li>Pendiente, acreditado, rechazado, cancelado y revertido.</li>
+<li>Éxito solo por confirmación verificada del proveedor.</li>
+<li>Idempotencia, comprobante y reintento sin duplicación.</li>
+<li>Informar que los tiempos dependen del proveedor elegido.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Consumidor</h2>
+<ul>
+<li>Voluntariedad de la propina y precio completo del servicio.</li>
+<li>Consentimiento inequívoco mediante la acción “Aceptar y elegir cómo pagar”.</li>
+<li>Datos del proveedor, CUIT, domicilio y reclamos antes de producción.</li>
+<li>Cancelación previa y procedimiento para errores/reversos.</li>
+<li>Número de caso y coordinación trazable con el proveedor.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Integración PSP</h2>
+<ul>
+<li>Exigir acreditación directa o split: propina completa al trabajador y servicio a SoloPropinas.</li>
+<li>Solo el backend calcula importes y crea la orden con idempotencia.</li>
+<li>Confirmar éxito únicamente mediante webhook firmado o consulta verificada.</li>
+<li>Guardar identificadores separados de orden, pago, asignación y acreditación.</li>
+<li>Conciliar diariamente propina, servicio, impuestos, costos y factura.</li>
+<li>No integrar un proveedor que obligue a SoloPropinas a custodiar la propina.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Facturación</h2>
+<ul>
+<li>Facturar únicamente el servicio del 0,9% y sus impuestos.</li>
+<li>Emitir a Consumidor Final cuando la normativa y el importe lo permitan.</li>
+<li>Vincular factura, orden interna, pago PSP y comprobante.</li>
+<li>Mostrar “Descargar factura de SoloPropinas” después de la acreditación.</li>
+<li>Mostrar por separado el comprobante del proveedor de pago.</li>
+<li>Vincular a Legales para solicitar otros datos fiscales.</li>
+<li>Las facturas autorizadas se ajustan con el procedimiento fiscal correspondiente; no se editan directamente.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Reputación</h2>
+<ul>
+<li>Estrellas solo después de acreditación confirmada.</li>
+<li>Una reseña por operación verificada.</li>
+<li>Opcional, con réplica, denuncia y moderación.</li>
+<li>Separar trabajador y establecimiento.</li>
+</ul>
+</article>
+<article class="card wide">
+<h2>Criterios de aceptación</h2>
+<ul>
+<li>El cliente sabe a quién pertenece la propina, quién procesa y qué cobra SoloPropinas.</li>
+<li>El 0,9% y su importe son visibles antes de aceptar.</li>
+<li>El trabajador recibe íntegramente la propina.</li>
+<li>El cliente puede elegir uno de los cuatro medios definidos.</li>
+<li>Luego de la acreditación puede descargar la factura de SoloPropinas.</li>
+<li>Puede acceder al procedimiento para solicitar otros datos fiscales.</li>
+<li>Administración puede conciliar orden, PSP, propina, servicio y factura.</li>
+<li>SoloPropinas no registra el monto ajeno como ingreso propio.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+</main>
+<script>
+document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.mode-btn').forEach(x=>x.classList.toggle('active',x===b));
+document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view))}));
+const screens=['profile','amount','confirm','payment','status'],labels={profile:'Perfil',amount:'Propina',confirm:'Confirmar',payment:'Medio de pago',status:'Estado'};
+function show(id){screens.forEach(x=>document.querySelector('#'+x).classList.toggle('active',x===id));
+document.querySelector('#label').textContent=labels[id]}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.next)));
+let amount=1500,selectedProvider='';
+const money=n=>'$'+new Intl.NumberFormat('es-AR').format(n);
+function serviceFee(){return Math.round(amount*.009)}function update(){const fee=serviceFee();
+document.querySelector('#tip').textContent=money(amount);
+document.querySelector('#fee').textContent=money(fee);
+document.querySelector('#total').textContent=money(amount+fee)+'*';
+document.querySelector('#receives').textContent=money(amount)}document.querySelectorAll('.amount').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.amount').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+document.querySelector('#other').value='';
+amount=Number(b.dataset.amount);
+update()}));
+document.querySelector('#other').addEventListener('input',e=>{const n=Number(e.target.value.replace(/\D/g,''));
+if(n){document.querySelectorAll('.amount').forEach(x=>x.classList.remove('active'));
+amount=n;
+update()}});
+document.querySelectorAll('.pay-option').forEach(b=>b.addEventListener('click',()=>{selectedProvider=b.dataset.pay;
+show('status');
+setState('pending')}));
+function setState(state){const screen=document.querySelector('#status'),icon=document.querySelector('#statusIcon'),title=document.querySelector('#statusTitle'),copy=document.querySelector('#statusCopy'),rating=document.querySelector('#rating'),documents=document.querySelector('#documents');
+screen.className='screen active center '+state;
+rating.hidden=true;
+documents.hidden=true;
+if(state==='pending'){icon.textContent='…';
+title.textContent='Pago pendiente';
+copy.textContent=`${selectedProvider} está verificando la operación. La propina todavía no fue informada como acreditada.`}if(state==='success'){icon.textContent='✓';
+title.textContent='Propina acreditada';
+copy.textContent=`${selectedProvider} confirmó ${money(amount)} acreditados directamente a Juan. El servicio SoloPropinas del 0,9% tiene una factura separada.`;
+rating.hidden=false;
+documents.hidden=false}if(state==='rejected'){icon.textContent='!';
+title.textContent='El pago no se realizó';
+copy.textContent=`${selectedProvider} rechazó la operación. No se acreditó la propina ni se cobró el servicio. Podés intentar nuevamente.`}}document.querySelectorAll('[data-state]').forEach(b=>b.addEventListener('click',()=>setState(b.dataset.state)));
+document.querySelectorAll('.stars button').forEach((b,i,all)=>b.addEventListener('click',()=>all.forEach((x,j)=>x.classList.toggle('active',j<=i))));
+update();
+
+</script>
+</body>
+</html>

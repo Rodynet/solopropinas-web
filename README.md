@@ -18,6 +18,8 @@ Prototipo sin pagos reales. No habilitar transacciones hasta completar los bloqu
 - `terminos-trabajador.html`, `terminos-cliente.html`, `privacidad.html`, `cookies.html`, `legales.html`, `ayuda.html`: documentos beta versionados.
 - `product-constitution.md`: decisiones no negociables del producto.
 - `payment-architecture.md`: separación de propina, servicio y PSP.
+- `administracion-operaciones.md`: contratación del PSP, conciliación, facturación y resolución de excepciones.
+- `factura-solopropinas-ejemplo.html`: maqueta descargable de la factura del servicio.
 - `docs/auditoria-integral-solopropinas-2026.pdf`: fuente de la revisión integral.
 
 ## Datos pendientes antes de beta transaccional

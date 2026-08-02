@@ -411,7 +411,7 @@
           "Las reseñas se muestran cuando existen, pero el trabajador no puede cargarlas manualmente.",
           "Definir moderación, formatos, peso máximo y política sobre fotografías de menores o terceras personas."
         ],
-        developerRequest: "Implementar un asistente mobile-first para cualquier trabajador de servicios. Después de nombre, actividad, lugares y foto laboral, formular preguntas breves y sugerencias. Enviar únicamente respuestas informadas al modelo IA, generar un borrador, permitir editarlo o mejorarlo y exigir confirmación explícita antes de publicar. Registrar prompt, modelo, versión sugerida, versión final y consentimiento; nunca publicar automáticamente.",
+        developerRequest: "Implementar un asistente mobile-first para cualquier trabajador de servicios. Permitir buscar lugares por nombre o dirección con Google Places, asociar varios, usar modalidad independiente y cargar manualmente uno que no aparezca. Después de nombre, actividad, lugares y foto laboral, formular preguntas breves y sugerencias. Enviar únicamente respuestas informadas al modelo IA, generar un borrador, permitir editarlo o mejorarlo y exigir confirmación explícita antes de publicar. Registrar prompt, modelo, versión sugerida, versión final y consentimiento; nunca publicar automáticamente.",
         screens: [
           { name: "Actividad y lugares de trabajo", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
           { name: "Foto laboral o avatar", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
@@ -491,15 +491,22 @@
           "La identidad del trabajador aparece antes que el monto: la propina se presenta como reconocimiento personal.",
           "El cliente puede completar el recorrido sin registrarse y pagar con su banco o billetera.",
           "La propina llega completa al trabajador mediante el PSP; SoloPropinas no descuenta comisión de ese importe.",
-          "El cliente paga por separado el servicio de SoloPropinas para entregar ese saldo al trabajador.",
+          "El cliente paga por separado un servicio inicial del 0,9% de la propina para entregar ese saldo al trabajador.",
+          "El porcentaje y su importe deben verse juntos para dejar claro que el costo es proporcional y no fijo.",
+          "No se utiliza checkbox: al continuar, el cliente confirma la propina, el 0,9% y el total informado.",
+          "Después del resumen puede elegir Mercado Pago, Naranja X, Ualá o la wallet del celular.",
+          "Después de la acreditación se muestran por separado el comprobante del proveedor y la factura de SoloPropinas por el servicio.",
+          "La factura se emite inicialmente a Consumidor Final y puede descargarse desde la operación.",
+          "Si el cliente necesita otros datos fiscales, debe acceder al procedimiento de Información legal y facturación.",
           "La tarifa, los impuestos, el total y el importe que recibe el trabajador deben verse antes de confirmar.",
           "Las estrellas son opcionales y se solicitan solamente cuando el PSP informa acreditación."
         ],
-        developerRequest: "Implementar el recorrido público sin registro obligatorio: perfil del trabajador, propina voluntaria, desglose separado de propina, tarifa de servicio, impuestos y total, consentimiento y pago por PSP. Acreditar la propina completa al trabajador y cobrar al cliente el servicio separado. Implementar pendiente, acreditado y rechazado, idempotencia, reversos, comprobante y estrellas solo tras acreditación.",
+        developerRequest: "Implementar el recorrido público sin registro obligatorio: perfil del trabajador, propina voluntaria y desglose de propina, servicio SoloPropinas inicial del 0,9%, impuestos y total. Reemplazar el checkbox por una leyenda que indique que la acción confirma los importes. Luego ofrecer Mercado Pago, Naranja X, Ualá y wallet del celular. Integrar mediante acreditación directa o split, con cálculo en backend, idempotencia, webhook firmado, conciliación y reversos. Tras la acreditación mostrar el comprobante del proveedor y permitir descargar la factura de SoloPropinas emitida a Consumidor Final por el servicio. Vincular a Legales para solicitar otros datos fiscales.",
         screens: [
           { name: "Perfil público", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Elegir monto", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Confirmar propina", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
+          { name: "Elegir medio de pago", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Agradecimiento y estrellas", status: "En progreso", url: "etapa-8-recibir-propinas.html" }
         ]
       },
