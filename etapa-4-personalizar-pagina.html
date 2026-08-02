@@ -1,15 +1,316 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Etapa 4 · Crear mi perfil profesional · SoloPropinas</title><style>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Etapa 4 · Crear mi perfil profesional · SoloPropinas</title>
+<style>
 :root{--g:#087a55;--gd:#073d31;--gl:#effbf5;--ink:#17332b;--muted:#65756f;--line:#dce8e3;--amber:#9a5c03}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f8f6;font-family:Inter,system-ui,sans-serif;line-height:1.5}button,input,textarea{font:inherit}button{cursor:pointer}.top{height:68px;padding:0 max(16px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fff}.brand{color:var(--gd);font-weight:900;text-decoration:none}.mode{padding:5px;border:1px solid var(--line);border-radius:12px}.mode button{height:34px;border:0;border-radius:9px;color:var(--muted);background:transparent;font-size:12px;font-weight:800}.mode button.active{color:var(--g);background:var(--gl)}.view{display:none}.view.active{display:block}.layout{width:min(1120px,calc(100% - 32px));min-height:calc(100vh - 68px);margin:auto;padding:45px 0;display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.copy small,.spec small{color:var(--g);font-weight:900}.copy h1,.spec h1{margin:14px 0;color:var(--gd);font-size:clamp(42px,5vw,67px);line-height:1;letter-spacing:-.05em}.copy p{max-width:590px;color:var(--muted);font-size:18px}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:25px}.principles div{padding:13px;border:1px solid var(--line);border-radius:14px;background:#fff}.principles b{display:block;color:var(--gd);font-size:12px}.principles span{font-size:10px;color:var(--muted)}.phone{padding:14px;border:1px solid #cbdcd5;border-radius:38px;background:#fafcfb;box-shadow:0 24px 70px #063e2e22}.phone-in{min-height:690px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:#fff}.phone-head{height:60px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;font-size:11px}.phone-head strong{font-size:14px;color:var(--gd)}.progress{height:5px;background:#e7efec}.progress span{display:block;width:16.6%;height:100%;background:var(--g);transition:.2s}.screen{display:none;padding:23px 27px}.screen.active{display:block}.screen h2{margin:0;color:var(--gd);font-size:28px;line-height:1.05}.lead{margin:9px 0 16px;color:var(--muted);font-size:12px}.field,textarea{width:100%;border:1px solid var(--line);border-radius:12px;outline:0}.field{height:48px;padding:0 13px}textarea{min-height:120px;padding:12px;resize:vertical}.field:focus,textarea:focus{border-color:var(--g);box-shadow:0 0 0 3px #dff7ec}.label{display:block;margin:12px 0 5px;font-size:11px;font-weight:850}.primary,.secondary{width:100%;min-height:48px;margin-top:13px;border-radius:13px;font-weight:850}.primary{border:0;color:#fff;background:var(--g)}.primary:disabled{color:#91a19b;background:#e4ebe8;cursor:not-allowed}.secondary{border:1px solid var(--line);color:var(--g);background:#fff}.back{margin-bottom:12px;border:0;color:var(--muted);background:transparent;font-size:11px}.chips,.choices{display:flex;flex-wrap:wrap;gap:7px}.chip,.choice{padding:9px 11px;border:1px solid var(--line);border-radius:99px;color:var(--ink);background:#fff;font-size:10px;font-weight:800}.chip.active,.choice.active{border-color:var(--g);color:var(--g);background:var(--gl)}.local-list{display:grid;gap:7px;margin-top:10px}.local{padding:11px;display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:10px}.local.active{border-color:var(--g);background:var(--gl)}.photo-box{height:220px;display:grid;place-items:center;border:1px dashed #9ccdb9;border-radius:17px;background:var(--gl);text-align:center}.photo-box img{width:100%;height:100%;object-fit:cover;border-radius:17px}.photo-box input{display:none}.photo-label{padding:10px 12px;border-radius:10px;color:#fff;background:var(--g);font-size:11px;font-weight:850}.tips{padding:11px;border-radius:11px;color:var(--muted);background:#f4f8f6;font-size:9px}.privacy{margin-top:9px;padding:10px;border-left:3px solid #d39a2c;border-radius:8px;color:#70571e;background:#fff8e7;font-size:9px}.question{margin-bottom:13px}.question strong{display:block;margin-bottom:7px;font-size:11px}.ai-note{padding:11px;border-radius:12px;color:var(--g);background:var(--gl);font-size:10px}.draft{padding:12px;border:1px solid #a9ddc6;border-radius:14px;background:var(--gl)}.draft-head{display:flex;justify-content:space-between;gap:10px;font-size:10px;font-weight:850}.draft textarea{margin-top:8px;background:#fff}.confirm{margin-top:10px;display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:start;font-size:9px;color:var(--muted)}.confirm input{width:17px;height:17px;margin:0;accent-color:var(--g)}.profile{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}.cover{height:78px;background:linear-gradient(135deg,var(--g),#28af7b)}.profile-body{padding:0 16px 16px}.avatar{width:72px;height:72px;margin-top:-36px;display:grid;place-items:center;overflow:hidden;border:4px solid #fff;border-radius:50%;color:#fff;background:#79bda1;font-size:23px;font-weight:900}.avatar img{width:100%;height:100%;object-fit:cover}.profile h3{margin:8px 0 0}.role{color:var(--g);font-size:10px;font-weight:850}.bio{margin:11px 0;padding:11px;border-radius:11px;background:#f5f8f6;font-size:10px}.profile-locals{display:flex;gap:5px;flex-wrap:wrap}.profile-locals span{padding:4px 7px;border-radius:99px;background:var(--gl);color:var(--g);font-size:8px}.success{text-align:center}.check{width:68px;height:68px;margin:35px auto 17px;display:grid;place-items:center;border-radius:50%;color:#fff;background:var(--g);font-size:27px}.spec{width:min(1120px,calc(100% - 32px));margin:auto;padding:50px 0}.decision{margin:20px 0;padding:20px;border:1px solid #a9ddc6;border-radius:18px;background:var(--gl)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.card.wide{grid-column:1/-1}.card h2{font-size:18px;color:var(--gd)}.card li{margin:7px 0;color:var(--muted);font-size:13px}@media(max-width:850px){.layout{grid-template-columns:1fr}.copy{text-align:center}.phone{max-width:430px;margin:auto}.grid{grid-template-columns:1fr}.card.wide{grid-column:auto}}@media(max-width:520px){.layout{width:100%;padding:0}.copy{padding:30px 20px}.principles{display:none}.phone{padding:0;border:0;border-radius:0}.phone-in{border:0;border-radius:0}}
-</style></head><body><header class="top"><a class="brand" href="directorio.html">$ SoloPropinas · Etapa 4</a><div class="mode"><button class="mode-btn active" data-view="demo">Vista trabajador</button><button class="mode-btn" data-view="spec">Especificaciones</button></div></header><main>
-<section class="view active" id="demo"><div class="layout"><div class="copy"><small>MAQUETA NAVEGABLE · ETAPA 04</small><h1>Una historia profesional escrita con ayuda, nunca sin permiso.</h1><p>La persona responde preguntas simples. La IA crea una descripción cálida y clara; después puede editarla, pedir una mejora y confirmar exactamente qué texto será público.</p><div class="principles"><div><b>Para cualquier actividad</b><span>Gastronomía, hotelería, belleza, turismo, reparto y más.</span></div><div><b>IA como asistente</b><span>Pregunta y propone; no decide ni publica.</span></div><div><b>Privacidad primero</b><span>Foto laboral por defecto y control del contenido.</span></div></div></div><div class="phone"><div class="phone-in"><div class="phone-head"><strong>$ SoloPropinas</strong><span id="step">Paso 1 de 6</span></div><div class="progress"><span id="bar"></span></div>
-<section class="screen active" id="identity"><h2>¿Cómo querés presentarte?</h2><p class="lead">Usá el nombre y la actividad con los que te conocen tus clientes.</p><label class="label" for="name">Nombre visible</label><input class="field" id="name" value="Juan"><label class="label" for="activity">Actividad o servicio</label><input class="field" id="activity" value="Atención al público" placeholder="Ej.: peluquería, guía, reparto"><button class="primary" data-next="workplaces">Continuar</button></section>
-<section class="screen" id="workplaces"><button class="back" data-next="identity">← Volver</button><h2>¿Dónde realizás tu trabajo?</h2><p class="lead">Podés asociar más de un lugar o trabajar de forma independiente.</p><div class="local-list"><button class="local active" data-local="Café Central">Café Central <span>✓</span></button><button class="local" data-local="Bistró del Parque">Bistró del Parque <span>＋</span></button><button class="local" data-local="Independiente / a domicilio">Independiente / a domicilio <span>＋</span></button></div><button class="secondary" type="button">No encuentro mi lugar de trabajo</button><button class="primary" data-next="photo">Continuar</button></section>
-<section class="screen" id="photo"><button class="back" data-next="workplaces">← Volver</button><h2>Una foto profesional ayuda a reconocerte</h2><p class="lead">No se usa para validar tu identidad. Le muestra al cliente a quién está agradeciendo.</p><label class="photo-box" for="photoFile"><span id="photoPrompt"><b class="photo-label">Sacar o elegir foto</b></span><img id="photoPreview" alt="Vista previa de foto profesional" hidden><input id="photoFile" type="file" accept="image/*"></label><ul class="tips"><li>Usá buena luz y un fondo relacionado con tu actividad.</li><li>Mostrá tu cara y evitá información privada en el fondo.</li></ul><div class="privacy">Preferí una foto laboral. No incluyas menores ni otras personas sin autorización.</div><button class="primary" data-next="questions">Continuar</button><button class="secondary" data-next="questions">Seguir con mis iniciales</button></section>
-<section class="screen" id="questions"><button class="back" data-next="photo">← Volver</button><h2>Te ayudamos a contar quién sos</h2><p class="lead">Elegí las respuestas que mejor te representen. La IA las convertirá en una propuesta.</p><div class="question"><strong>¿Qué querés que sienta un cliente?</strong><div class="choices" data-group="feeling"><button class="choice active" data-value="bien recibido">Bien recibido</button><button class="choice" data-value="acompañado">Acompañado</button><button class="choice" data-value="en confianza">En confianza</button></div></div><div class="question"><strong>¿Qué valoran más de tu trabajo?</strong><div class="choices" data-group="strength"><button class="choice active" data-value="la atención a los detalles">Los detalles</button><button class="choice" data-value="la amabilidad">La amabilidad</button><button class="choice" data-value="la rapidez y claridad">La rapidez</button></div></div><div class="question"><strong>¿Qué te motiva?</strong><div class="choices" data-group="motivation"><button class="choice active" data-value="hacer que cada experiencia sea especial">Crear una buena experiencia</button><button class="choice" data-value="resolver lo que cada persona necesita">Ayudar a resolver</button><button class="choice" data-value="mejorar todos los días">Seguir creciendo</button></div></div><div class="ai-note">La IA usará solo estas respuestas para crear el borrador. Nada se publica todavía.</div><button class="primary" id="generate">Crear mi descripción con IA</button></section>
-<section class="screen" id="review"><button class="back" data-next="questions">← Cambiar respuestas</button><h2>Revisá la propuesta</h2><p class="lead">Podés cambiar cualquier palabra. El texto final siempre es tu decisión.</p><div class="draft"><div class="draft-head"><span>Propuesta generada con IA</span><span id="count">0/280</span></div><textarea id="bio" maxlength="280"></textarea></div><button class="secondary" id="improve">Mejorar el texto con IA</button><label class="confirm"><input type="checkbox" id="approve"><span>Revisé el texto y confirmo que representa mi trabajo. Entiendo que se mostrará públicamente cuando publique mi perfil.</span></label><button class="primary" id="confirmBio" disabled>Confirmar texto y ver mi perfil</button></section>
-<section class="screen" id="preview"><button class="back" data-next="review">← Editar descripción</button><h2>Así se verá tu perfil</h2><p class="lead">Todavía no está publicado. Revisá una vez más.</p><article class="profile"><div class="cover"></div><div class="profile-body"><div class="avatar" id="avatar">JM</div><h3 id="profileName">Juan</h3><div class="role" id="profileActivity">Atención al público</div><div class="bio" id="profileBio"></div><div class="profile-locals" id="profileLocals"><span>Café Central</span></div></div></article><button class="primary" id="publish">Publicar mi perfil</button><button class="secondary" data-next="review">Volver a editar</button></section>
-<section class="screen success" id="done"><div class="check">✓</div><h2>Tu perfil profesional está publicado</h2><p class="lead">El texto que confirmaste ya forma parte de tu perfil. Podés editarlo, ocultarlo o eliminarlo cuando quieras.</p><button class="primary">Continuar con la verificación de cobro</button></section>
-</div></div></div></section>
-<section class="view" id="spec"><div class="spec"><small>SOLICITUD DE REQUERIMIENTO A DESARROLLO</small><h1>Etapa 4 · Crear mi perfil profesional</h1><div class="decision"><strong>Definición central</strong><p>La IA es un asistente de redacción. Formula preguntas, genera una propuesta y permite mejorarla, pero no publica ni modifica el perfil sin revisión, edición posible y confirmación explícita del trabajador.</p></div><div class="grid"><article class="card wide"><h2>Flujo</h2><p>Nombre y actividad → lugares de trabajo → foto laboral → preguntas → borrador IA → edición y confirmación → vista previa → publicación.</p></article><article class="card"><h2>IA y consentimiento</h2><ul><li>Preguntas breves, sugerencias seleccionables y campo opcional.</li><li>Informar qué respuestas se envían al modelo y con qué finalidad.</li><li>No entrenar modelos con las respuestas sin base y consentimiento específico.</li><li>Mostrar que el contenido fue sugerido por IA.</li><li>Permitir editar, regenerar, rechazar y volver atrás.</li><li>Publicar solo después de checkbox y acción inequívoca.</li></ul></article><article class="card"><h2>Seguridad del texto</h2><ul><li>Moderación de datos personales, discriminación, promesas falsas y contenido ilegal.</li><li>No inventar experiencia, títulos, certificaciones ni lugares.</li><li>Conservar versión sugerida, versión editada y consentimiento.</li><li>Registrar modelo, versión del prompt, fecha y publicación.</li></ul></article><article class="card"><h2>Actividad y lugares</h2><ul><li>Lenguaje válido para cualquier trabajador de servicios.</li><li>Varios lugares, modalidad independiente o a domicilio.</li><li>Asociar marcas solo con autorización y canal de disputa.</li><li>Separar actividad profesional de relación laboral.</li></ul></article><article class="card"><h2>Fotos y privacidad</h2><ul><li>Foto laboral como opción predeterminada; no se usa como KYC.</li><li>Avatar disponible sin bloqueo.</li><li>Terceros y menores limitados y sujetos a consentimiento reforzado.</li><li>Recorte, moderación, visibilidad, reemplazo y borrado.</li></ul></article><article class="card wide"><h2>Criterios de aceptación</h2><ul><li>La persona puede completar el perfil sin escribir una descripción desde cero.</li><li>La IA genera texto únicamente a partir de respuestas visibles y datos confirmados.</li><li>Ningún texto se publica automáticamente.</li><li>La persona puede editar la propuesta y pedir una mejora.</li><li>La versión final exige confirmación específica antes de publicar.</li><li>La vista previa coincide con el contenido confirmado.</li><li>El perfil funciona para distintas actividades y modalidades de trabajo.</li></ul></article></div></div></section></main><script>
-const views=document.querySelectorAll('.view'),modeBtns=document.querySelectorAll('.mode-btn');modeBtns.forEach(b=>b.addEventListener('click',()=>{modeBtns.forEach(x=>x.classList.toggle('active',x===b));views.forEach(v=>v.classList.toggle('active',v.id===b.dataset.view))}));const ids=['identity','workplaces','photo','questions','review','preview','done'];function show(id){ids.forEach(x=>document.querySelector('#'+x).classList.toggle('active',x===id));const n=Math.min(ids.indexOf(id)+1,6);document.querySelector('#step').textContent=id==='done'?'Completo':`Paso ${n} de 6`;document.querySelector('#bar').style.width=(id==='done'?100:n/6*100)+'%'}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.next)));document.querySelectorAll('.local').forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('active');b.querySelector('span').textContent=b.classList.contains('active')?'✓':'＋'}));document.querySelectorAll('.choices').forEach(g=>g.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));b.classList.add('active')})));const file=document.querySelector('#photoFile');let photoUrl='';file.addEventListener('change',()=>{if(!file.files[0])return;photoUrl=URL.createObjectURL(file.files[0]);const p=document.querySelector('#photoPreview');p.src=photoUrl;p.hidden=false;document.querySelector('#photoPrompt').hidden=true});const bio=document.querySelector('#bio'),count=document.querySelector('#count');function answer(group){return document.querySelector(`[data-group="${group}"] .active`).dataset.value}function draft(improved=false){const name=document.querySelector('#name').value.trim()||'Juan',activity=document.querySelector('#activity').value.trim()||'trabajador de servicios';bio.value=improved?`Soy ${name} y trabajo en ${activity}. Me importa que cada persona se sienta ${answer('feeling')}, por eso pongo especial atención en ${answer('strength')}. Disfruto ${answer('motivation')} y busco que cada experiencia sea cercana, respetuosa y auténtica.`:`Soy ${name}, trabajo en ${activity} y me gusta que cada persona se sienta ${answer('feeling')}. Suelo destacarme por ${answer('strength')} y me motiva ${answer('motivation')}.`;bio.dispatchEvent(new Event('input'));show('review')}document.querySelector('#generate').addEventListener('click',()=>draft(false));document.querySelector('#improve').addEventListener('click',()=>draft(true));bio.addEventListener('input',()=>count.textContent=`${bio.value.length}/280`);const approve=document.querySelector('#approve'),confirm=document.querySelector('#confirmBio');approve.addEventListener('change',()=>confirm.disabled=!approve.checked);confirm.addEventListener('click',()=>{const name=document.querySelector('#name').value.trim()||'Juan';document.querySelector('#profileName').textContent=name;document.querySelector('#profileActivity').textContent=document.querySelector('#activity').value.trim()||'Trabajador de servicios';document.querySelector('#profileBio').textContent=bio.value;const avatar=document.querySelector('#avatar');avatar.innerHTML='';if(photoUrl){const img=document.createElement('img');img.src=photoUrl;img.alt='Foto profesional';avatar.append(img)}else avatar.textContent=name.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();const locals=document.querySelector('#profileLocals');locals.innerHTML='';document.querySelectorAll('.local.active').forEach(x=>{const s=document.createElement('span');s.textContent=x.dataset.local;locals.append(s)});show('preview')});document.querySelector('#publish').addEventListener('click',()=>show('done'));
-</script></body></html>
+</style>
+</head>
+<body>
+<header class="top">
+<a class="brand" href="directorio.html">$ SoloPropinas · Etapa 4</a>
+<div class="mode">
+<button class="mode-btn active" data-view="demo">Vista trabajador</button>
+<button class="mode-btn" data-view="spec">Especificaciones</button>
+</div>
+</header>
+<main>
+<section class="view active" id="demo">
+<div class="layout">
+<div class="copy">
+<small>MAQUETA NAVEGABLE · ETAPA 04</small>
+<h1>Una historia profesional escrita con ayuda, nunca sin permiso.</h1>
+<p>La persona responde preguntas simples. La IA crea una descripción cálida y clara; después puede editarla, pedir una mejora y confirmar exactamente qué texto será público.</p>
+<div class="principles">
+<div>
+<b>Para cualquier actividad</b>
+<span>Gastronomía, hotelería, belleza, turismo, reparto y más.</span>
+</div>
+<div>
+<b>IA como asistente</b>
+<span>Pregunta y propone; no decide ni publica.</span>
+</div>
+<div>
+<b>Privacidad primero</b>
+<span>Foto laboral por defecto y control del contenido.</span>
+</div>
+</div>
+</div>
+<div class="phone">
+<div class="phone-in">
+<div class="phone-head">
+<strong>$ SoloPropinas</strong>
+<span id="step">Paso 1 de 6</span>
+</div>
+<div class="progress">
+<span id="bar">
+</span>
+</div>
+<section class="screen active" id="identity">
+<h2>¿Cómo querés presentarte?</h2>
+<p class="lead">Usá el nombre y la actividad con los que te conocen tus clientes.</p>
+<label class="label" for="name">Nombre visible</label>
+<input class="field" id="name" value="Juan">
+<label class="label" for="activity">Actividad o servicio</label>
+<input class="field" id="activity" value="Atención al público" placeholder="Ej.: peluquería, guía, reparto">
+<button class="primary" data-next="workplaces">Continuar</button>
+</section>
+<section class="screen" id="workplaces">
+<button class="back" data-next="identity">← Volver</button>
+<h2>¿Dónde realizás tu trabajo?</h2>
+<p class="lead">Buscá y agregá todos los lugares donde trabajás. También podés indicar que trabajás de forma independiente.</p>
+<label class="label" for="placeSearch">Buscar un lugar en Google</label>
+<div style="display:grid;grid-template-columns:1fr auto;gap:7px">
+<input class="field" id="placeSearch" placeholder="Nombre del lugar o dirección">
+<button id="searchPlace" type="button" style="padding:0 13px;border:0;border-radius:12px;color:#fff;background:var(--g);font-size:10px;font-weight:850">Buscar</button>
+</div>
+<p style="margin:6px 0 0;color:var(--muted);font-size:8px">La versión final buscará en Google Places y mostrará el nombre y la dirección.</p>
+<div class="local-list" id="placeList">
+<button class="local active" data-local="Café Central · Av. Colón 245">Café Central · Av. Colón 245 <span>✓</span>
+</button>
+<button class="local" data-local="Bistró del Parque · Duarte Quirós 1180">Bistró del Parque · Duarte Quirós 1180 <span>＋</span>
+</button>
+<button class="local" data-local="Independiente / a domicilio">Trabajo independiente / a domicilio <span>＋</span>
+</button>
+</div>
+<p style="margin:12px 0 0;color:var(--muted);font-size:9px;font-weight:900;text-transform:uppercase">Podés seleccionar más de uno</p>
+<button class="secondary" id="showManual" type="button">No encuentro mi lugar de trabajo</button>
+<div id="manualPlace" hidden style="margin-top:10px;padding:11px;border:1px solid var(--line);border-radius:13px;background:#f8fbfa">
+<label class="label" for="manualName">Nombre del lugar</label>
+<input class="field" id="manualName" placeholder="Ej.: Peluquería del Centro">
+<label class="label" for="manualAddress">Dirección o zona</label>
+<input class="field" id="manualAddress" placeholder="Ej.: Nueva Córdoba">
+<button class="secondary" id="addManual" type="button">Agregar este lugar</button>
+</div>
+<button class="primary" data-next="photo">Continuar</button>
+</section>
+<section class="screen" id="photo">
+<button class="back" data-next="workplaces">← Volver</button>
+<h2>Una foto profesional ayuda a reconocerte</h2>
+<p class="lead">No se usa para validar tu identidad. Le muestra al cliente a quién está agradeciendo.</p>
+<label class="photo-box" for="photoFile">
+<span id="photoPrompt">
+<b class="photo-label">Sacar o elegir foto</b>
+</span>
+<img id="photoPreview" alt="Vista previa de foto profesional" hidden>
+<input id="photoFile" type="file" accept="image/*">
+</label>
+<ul class="tips">
+<li>Usá buena luz y un fondo relacionado con tu actividad.</li>
+<li>Mostrá tu cara y evitá información privada en el fondo.</li>
+</ul>
+<div class="privacy">Preferí una foto laboral. No incluyas menores ni otras personas sin autorización.</div>
+<button class="primary" data-next="questions">Continuar</button>
+<button class="secondary" data-next="questions">Seguir con mis iniciales</button>
+</section>
+<section class="screen" id="questions">
+<button class="back" data-next="photo">← Volver</button>
+<h2>Te ayudamos a contar quién sos</h2>
+<p class="lead">Elegí las respuestas que mejor te representen. La IA las convertirá en una propuesta.</p>
+<div class="question">
+<strong>¿Qué querés que sienta un cliente?</strong>
+<div class="choices" data-group="feeling">
+<button class="choice active" data-value="bien recibido">Bien recibido</button>
+<button class="choice" data-value="acompañado">Acompañado</button>
+<button class="choice" data-value="en confianza">En confianza</button>
+</div>
+</div>
+<div class="question">
+<strong>¿Qué valoran más de tu trabajo?</strong>
+<div class="choices" data-group="strength">
+<button class="choice active" data-value="la atención a los detalles">Los detalles</button>
+<button class="choice" data-value="la amabilidad">La amabilidad</button>
+<button class="choice" data-value="la rapidez y claridad">La rapidez</button>
+</div>
+</div>
+<div class="question">
+<strong>¿Qué te motiva?</strong>
+<div class="choices" data-group="motivation">
+<button class="choice active" data-value="hacer que cada experiencia sea especial">Crear una buena experiencia</button>
+<button class="choice" data-value="resolver lo que cada persona necesita">Ayudar a resolver</button>
+<button class="choice" data-value="mejorar todos los días">Seguir creciendo</button>
+</div>
+</div>
+<div class="ai-note">La IA usará solo estas respuestas para crear el borrador. Nada se publica todavía.</div>
+<button class="primary" id="generate">Crear mi descripción con IA</button>
+</section>
+<section class="screen" id="review">
+<button class="back" data-next="questions">← Cambiar respuestas</button>
+<h2>Revisá la propuesta</h2>
+<p class="lead">Podés cambiar cualquier palabra. El texto final siempre es tu decisión.</p>
+<div class="draft">
+<div class="draft-head">
+<span>Propuesta generada con IA</span>
+<span id="count">0/280</span>
+</div>
+<textarea id="bio" maxlength="280">
+</textarea>
+</div>
+<button class="secondary" id="improve">Mejorar el texto con IA</button>
+<label class="confirm">
+<input type="checkbox" id="approve">
+<span>Revisé el texto y confirmo que representa mi trabajo. Entiendo que se mostrará públicamente cuando publique mi perfil.</span>
+</label>
+<button class="primary" id="confirmBio" disabled>Confirmar texto y ver mi perfil</button>
+</section>
+<section class="screen" id="preview">
+<button class="back" data-next="review">← Editar descripción</button>
+<h2>Así se verá tu perfil</h2>
+<p class="lead">Todavía no está publicado. Revisá una vez más.</p>
+<article class="profile">
+<div class="cover">
+</div>
+<div class="profile-body">
+<div class="avatar" id="avatar">JM</div>
+<h3 id="profileName">Juan</h3>
+<div class="role" id="profileActivity">Atención al público</div>
+<div class="bio" id="profileBio">
+</div>
+<div class="profile-locals" id="profileLocals">
+<span>Café Central</span>
+</div>
+</div>
+</article>
+<button class="primary" id="publish">Publicar mi perfil</button>
+<button class="secondary" data-next="review">Volver a editar</button>
+</section>
+<section class="screen success" id="done">
+<div class="check">✓</div>
+<h2>Tu perfil profesional está publicado</h2>
+<p class="lead">El texto que confirmaste ya forma parte de tu perfil. Podés editarlo, ocultarlo o eliminarlo cuando quieras.</p>
+<button class="primary">Continuar con la verificación de cobro</button>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="view" id="spec">
+<div class="spec">
+<small>SOLICITUD DE REQUERIMIENTO A DESARROLLO</small>
+<h1>Etapa 4 · Crear mi perfil profesional</h1>
+<div class="decision">
+<strong>Definición central</strong>
+<p>La IA es un asistente de redacción. Formula preguntas, genera una propuesta y permite mejorarla, pero no publica ni modifica el perfil sin revisión, edición posible y confirmación explícita del trabajador.</p>
+</div>
+<div class="grid">
+<article class="card wide">
+<h2>Flujo</h2>
+<p>Nombre y actividad → buscar y seleccionar uno o varios lugares → foto laboral → preguntas → borrador IA → edición y confirmación → vista previa → publicación.</p>
+</article>
+<article class="card">
+<h2>IA y consentimiento</h2>
+<ul>
+<li>Preguntas breves, sugerencias seleccionables y campo opcional.</li>
+<li>Informar qué respuestas se envían al modelo y con qué finalidad.</li>
+<li>No entrenar modelos con las respuestas sin base y consentimiento específico.</li>
+<li>Mostrar que el contenido fue sugerido por IA.</li>
+<li>Permitir editar, regenerar, rechazar y volver atrás.</li>
+<li>Publicar solo después de checkbox y acción inequívoca.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Seguridad del texto</h2>
+<ul>
+<li>Moderación de datos personales, discriminación, promesas falsas y contenido ilegal.</li>
+<li>No inventar experiencia, títulos, certificaciones ni lugares.</li>
+<li>Conservar versión sugerida, versión editada y consentimiento.</li>
+<li>Registrar modelo, versión del prompt, fecha y publicación.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Actividad y lugares</h2>
+<ul>
+<li>Lenguaje válido para cualquier trabajador de servicios.</li>
+<li>Buscar por nombre o dirección mediante Google Places.</li>
+<li>Mostrar nombre, dirección y referencia de ubicación antes de agregar.</li>
+<li>Seleccionar, mostrar, ordenar y eliminar varios lugares.</li>
+<li>Modalidad independiente, a domicilio o sin lugar fijo.</li>
+<li>Alta manual no bloqueante cuando un lugar no aparece.</li>
+<li>Evitar duplicados mediante el identificador estable de Google.</li>
+<li>Asociar marcas solo con autorización y canal de disputa.</li>
+<li>Separar actividad profesional de relación laboral.</li>
+</ul>
+</article>
+<article class="card">
+<h2>Fotos y privacidad</h2>
+<ul>
+<li>Foto laboral como opción predeterminada; no se usa como KYC.</li>
+<li>Avatar disponible sin bloqueo.</li>
+<li>Terceros y menores limitados y sujetos a consentimiento reforzado.</li>
+<li>Recorte, moderación, visibilidad, reemplazo y borrado.</li>
+</ul>
+</article>
+<article class="card wide">
+<h2>Criterios de aceptación</h2>
+<ul>
+<li>La persona puede completar el perfil sin escribir una descripción desde cero.</li>
+<li>La IA genera texto únicamente a partir de respuestas visibles y datos confirmados.</li>
+<li>Ningún texto se publica automáticamente.</li>
+<li>La persona puede editar la propuesta y pedir una mejora.</li>
+<li>La versión final exige confirmación específica antes de publicar.</li>
+<li>La vista previa coincide con el contenido confirmado.</li>
+<li>El perfil funciona para distintas actividades y modalidades de trabajo.</li>
+<li>La persona puede asociar varios lugares encontrados en Google o cargados manualmente.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+</main>
+<script>
+const views=document.querySelectorAll('.view'),modeBtns=document.querySelectorAll('.mode-btn');
+modeBtns.forEach(b=>b.addEventListener('click',()=>{modeBtns.forEach(x=>x.classList.toggle('active',x===b));
+views.forEach(v=>v.classList.toggle('active',v.id===b.dataset.view))}));
+const ids=['identity','workplaces','photo','questions','review','preview','done'];
+function show(id){ids.forEach(x=>document.querySelector('#'+x).classList.toggle('active',x===id));
+const n=Math.min(ids.indexOf(id)+1,6);
+document.querySelector('#step').textContent=id==='done'?'Completo':`Paso ${n} de 6`;
+document.querySelector('#bar').style.width=(id==='done'?100:n/6*100)+'%'}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.next)));
+const placeList=document.querySelector('#placeList');
+placeList.addEventListener('click',event=>{const b=event.target.closest('.local');if(!b)return;b.classList.toggle('active');b.querySelector('span').textContent=b.classList.contains('active')?'✓':'＋'});
+function addPlace(label,selected=false){if([...placeList.querySelectorAll('.local')].some(x=>x.dataset.local===label))return;const b=document.createElement('button');b.className='local'+(selected?' active':'');b.type='button';b.dataset.local=label;b.innerHTML=`${label} <span>${selected?'✓':'＋'}</span>`;placeList.prepend(b)}
+document.querySelector('#searchPlace').addEventListener('click',()=>{const query=document.querySelector('#placeSearch').value.trim();if(!query)return;addPlace(`${query} · Resultado de Google`,true);document.querySelector('#placeSearch').value=''});
+document.querySelector('#showManual').addEventListener('click',()=>{const box=document.querySelector('#manualPlace');box.hidden=!box.hidden});
+document.querySelector('#addManual').addEventListener('click',()=>{const name=document.querySelector('#manualName').value.trim(),address=document.querySelector('#manualAddress').value.trim();if(!name)return;addPlace(address?`${name} · ${address}`:name,true);document.querySelector('#manualName').value='';document.querySelector('#manualAddress').value='';document.querySelector('#manualPlace').hidden=true});
+document.querySelectorAll('.choices').forEach(g=>g.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));
+b.classList.add('active')})));
+const file=document.querySelector('#photoFile');
+let photoUrl='';
+file.addEventListener('change',()=>{if(!file.files[0])return;
+photoUrl=URL.createObjectURL(file.files[0]);
+const p=document.querySelector('#photoPreview');
+p.src=photoUrl;
+p.hidden=false;
+document.querySelector('#photoPrompt').hidden=true});
+const bio=document.querySelector('#bio'),count=document.querySelector('#count');
+function answer(group){return document.querySelector(`[data-group="${group}"] .active`).dataset.value}function draft(improved=false){const name=document.querySelector('#name').value.trim()||'Juan',activity=document.querySelector('#activity').value.trim()||'trabajador de servicios';
+bio.value=improved?`Soy ${name} y trabajo en ${activity}. Me importa que cada persona se sienta ${answer('feeling')}, por eso pongo especial atención en ${answer('strength')}. Disfruto ${answer('motivation')} y busco que cada experiencia sea cercana, respetuosa y auténtica.`:`Soy ${name}, trabajo en ${activity} y me gusta que cada persona se sienta ${answer('feeling')}. Suelo destacarme por ${answer('strength')} y me motiva ${answer('motivation')}.`;
+bio.dispatchEvent(new Event('input'));
+show('review')}document.querySelector('#generate').addEventListener('click',()=>draft(false));
+document.querySelector('#improve').addEventListener('click',()=>draft(true));
+bio.addEventListener('input',()=>count.textContent=`${bio.value.length}/280`);
+const approve=document.querySelector('#approve'),confirm=document.querySelector('#confirmBio');
+approve.addEventListener('change',()=>confirm.disabled=!approve.checked);
+confirm.addEventListener('click',()=>{const name=document.querySelector('#name').value.trim()||'Juan';
+document.querySelector('#profileName').textContent=name;
+document.querySelector('#profileActivity').textContent=document.querySelector('#activity').value.trim()||'Trabajador de servicios';
+document.querySelector('#profileBio').textContent=bio.value;
+const avatar=document.querySelector('#avatar');
+avatar.innerHTML='';
+if(photoUrl){const img=document.createElement('img');
+img.src=photoUrl;
+img.alt='Foto profesional';
+avatar.append(img)}else avatar.textContent=name.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
+const locals=document.querySelector('#profileLocals');
+locals.innerHTML='';
+document.querySelectorAll('.local.active').forEach(x=>{const s=document.createElement('span');
+s.textContent=x.dataset.local;
+locals.append(s)});
+show('preview')});
+document.querySelector('#publish').addEventListener('click',()=>show('done'));
+
+</script>
+</body>
+</html>
