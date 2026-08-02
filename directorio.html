@@ -353,12 +353,12 @@
       {
         title: "Descubrir SoloPropinas", icon: "✦",
         stageStatus: "Cumplida",
-        objective: "Entender la propuesta y por qué facilita recibir propinas.",
+        objective: "Entender que SoloPropinas es una plataforma de identidad, reputación y herramientas para trabajadores de servicios.",
         observations: [
           "Conectar los botones “Crear mi cuenta” con el proceso real de alta.",
-          "Aclarar los medios de cobro disponibles.",
+          "Mantener la propina como una función integrada, no como la identidad completa del producto.",
           "Agregar preguntas frecuentes y señales de confianza verificables.",
-          "Validar que expresiones como “al instante” reflejen exactamente la operación final."
+          "No prometer acreditación inmediata; informar tiempos y estados del PSP."
         ],
         developerRequest: "Conservar la landing y la explicación visual de cómo funciona como base aprobada. Preparar la implementación responsive definitiva y dejar todos los llamados a la acción listos para enlazar con la etapa Crear cuenta. Documentar componentes, estados, enlaces y criterios de aceptación.",
         screens: [
@@ -402,7 +402,7 @@
       {
         title: "Personalizar mi página", icon: "☺",
         stageStatus: "Cumplida",
-        objective: "Humanizar el cobro y mostrar quién está detrás del QR.",
+        objective: "Crear una identidad profesional humana y clara, válida para cualquier actividad de servicios.",
         observations: [
           "Maqueta revisada para contemplar múltiples lugares de trabajo y alta de locales inexistentes.",
           "La foto principal humaniza el agradecimiento; no se utiliza como validación de identidad.",
@@ -411,19 +411,19 @@
           "Las reseñas se muestran cuando existen, pero el trabajador no puede cargarlas manualmente.",
           "Definir moderación, formatos, peso máximo y política sobre fotografías de menores o terceras personas."
         ],
-        developerRequest: "Implementar un asistente mobile-first con nombre visible, selección de uno o varios locales, alta no bloqueante de un local inexistente, selfie o galería, editor de recorte y zoom, avatar alternativo, fotos personales opcionales con ejemplos y vista previa. Incluir recordatorio posterior para perfiles sin foto, sin afirmar mejoras porcentuales hasta validarlas con datos.",
+        developerRequest: "Implementar un asistente mobile-first para cualquier trabajador de servicios. Después de nombre, actividad, lugares y foto laboral, formular preguntas breves y sugerencias. Enviar únicamente respuestas informadas al modelo IA, generar un borrador, permitir editarlo o mejorarlo y exigir confirmación explícita antes de publicar. Registrar prompt, modelo, versión sugerida, versión final y consentimiento; nunca publicar automáticamente.",
         screens: [
-          { name: "Datos personales", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Seleccionar local", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Subir fotos", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
-          { name: "Reseñas", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Actividad y lugares de trabajo", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Foto laboral o avatar", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Preguntas y borrador con IA", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
+          { name: "Editar y confirmar texto", status: "Publicado", url: "etapa-4-personalizar-pagina.html" },
           { name: "Vista previa del perfil", status: "Publicado", url: "etapa-4-personalizar-pagina.html" }
         ]
       },
       {
-        title: "Configurar cobro", icon: "$",
+        title: "Configurar acreditación", icon: "$",
         stageStatus: "Cumplida",
-        objective: "Elegir y cambiar libremente dónde recibir el dinero.",
+        objective: "Verificar con el PSP dónde se acreditará directamente el saldo del trabajador.",
         observations: [
           "Maqueta inicial creada para revisión.",
           "El usuario ingresa alias, CBU o CVU sin tener que elegir previamente una marca de banco o billetera.",
@@ -431,7 +431,7 @@
           "Definir requisitos regulatorios y de titularidad antes del desarrollo productivo.",
           "Cambiar el destino de cobro nunca modifica el QR personal."
         ],
-        developerRequest: "Implementar configuración mobile-first mediante alias, CBU o CVU, resolviendo entidad y titular antes de confirmar. Incluir validación de formato, cuenta inexistente, titularidad, confirmación explícita, protección de cambios sensibles y edición futura sin regenerar el QR.",
+        developerRequest: "Integrar un PSP regulado para KYC, mayoría de edad, titularidad y acreditación directa. SoloPropinas no recibe ni custodia fondos. Incluir validación, estados, reversos y conciliación; para cambios sensibles exigir reautenticación, espera de seguridad, doble alerta, cancelación y registro de auditoría sin regenerar el QR.",
         screens: [
           { name: "Elegir medio de cobro", status: "Publicado", url: "etapa-5-configurar-cobro.html" },
           { name: "Usar banco o billetera", status: "Publicado", url: "etapa-5-configurar-cobro.html" },
@@ -453,7 +453,7 @@
           "Después de confirmar el envío, Empezar a cobrar es la acción principal y la guía queda como opción secundaria.",
           "Si el usuario abre la guía, esta también termina en Empezar a cobrar.",
           "Se eliminó la pantalla final de confirmación: ambas rutas continúan directamente a Primeros pasos.",
-          "La etapa enseña cómo acercarlo a la mesa y ofrece una frase simple, natural y sin presión.",
+          "La etapa enseña cómo acercarlo al cliente y ofrece una frase simple, natural y sin presión.",
           "El QR contiene una URL pública estable y un identificador opaco; nunca datos bancarios ni información personal sensible.",
           "Los materiales pueden mostrar un local, pero el código continúa perteneciendo a la persona.",
           "Definir tamaños mínimos, formatos finales y proveedor de generación antes del desarrollo."
@@ -468,32 +468,39 @@
       },
       {
         title: "Comenzar a cobrar", icon: "↗",
-        stageStatus: "En diseño",
+        stageStatus: "Cumplida",
         objective: "Poner el QR en circulación con mínima fricción.",
         observations: [
-          "Maqueta inicial creada para revisión.",
-          "El objetivo no es enseñar nuevamente el producto, sino lograr que el trabajador use el QR en su próxima mesa.",
-          "El QR permanece accesible desde WhatsApp y también desde un modo de pantalla completa.",
-          "Descarga e impresión se administran desde el panel y no interrumpen el primer uso."
+          "Maqueta resumida a dos vistas permanentes: Mi QR y Turno.",
+          "Se eliminó la guía repetida porque el trabajador ya recibió esas indicaciones en la etapa anterior.",
+          "Las fotos y el mensaje presentan la propina como agradecimiento a una persona, no como el uso de una aplicación.",
+          "La vista para el cliente no muestra recomendaciones operativas: puede maximizarse y ocupar toda la pantalla del celular."
         ],
-        developerRequest: "Implementar Primeros pasos con una preparación breve, acceso inmediato al QR en pantalla completa, frase sugerida y objetivo concreto para la próxima mesa. Mostrar un panel inicial sin propinas que indique la única acción recomendada. Mantener materiales, descargas e impresión como funciones secundarias del panel.",
+        developerRequest: "Implementar un espacio de trabajo con pestañas permanentes Mi QR y Turno. Agregar Mostrar en pantalla completa: debe ocultar navegación, instrucciones y controles, ampliar el QR y mostrar ← Volver para minimizar. Turno debe mostrar dinero, propinas, estrellas y misiones expresadas por cantidad de usos, sin atarlo a una actividad específica.",
         screens: [
-          { name: "Guía de primeros pasos", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" },
-          { name: "Mostrar mi QR", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" },
-          { name: "Mi primer turno", status: "En progreso", url: "etapa-7-comenzar-cobrar.html" }
+          { name: "Mi QR personal", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" },
+          { name: "Turno: resultados, estrellas y misiones", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" }
         ]
       },
       {
         title: "Recibir propinas", icon: "♥",
-        stageStatus: "Pendiente de definición",
+        stageStatus: "Maqueta actualizada",
         objective: "Lograr un pago rápido, claro y agradable para el cliente.",
-        observations: ["Definir montos sugeridos, medios de pago y comportamiento ante pagos rechazados o pendientes."],
-        developerRequest: "Especificar el recorrido público desde el perfil hasta el agradecimiento: selección de monto, pago, confirmación, errores, reintentos, accesibilidad y experiencia móvil.",
+        observations: [
+          "Maqueta inicial creada para revisión desde la perspectiva del cliente.",
+          "La identidad del trabajador aparece antes que el monto: la propina se presenta como reconocimiento personal.",
+          "El cliente puede completar el recorrido sin registrarse y pagar con su banco o billetera.",
+          "La propina llega completa al trabajador mediante el PSP; SoloPropinas no descuenta comisión de ese importe.",
+          "El cliente paga por separado el servicio de SoloPropinas para entregar ese saldo al trabajador.",
+          "La tarifa, los impuestos, el total y el importe que recibe el trabajador deben verse antes de confirmar.",
+          "Las estrellas son opcionales y se solicitan solamente cuando el PSP informa acreditación."
+        ],
+        developerRequest: "Implementar el recorrido público sin registro obligatorio: perfil del trabajador, propina voluntaria, desglose separado de propina, tarifa de servicio, impuestos y total, consentimiento y pago por PSP. Acreditar la propina completa al trabajador y cobrar al cliente el servicio separado. Implementar pendiente, acreditado y rechazado, idempotencia, reversos, comprobante y estrellas solo tras acreditación.",
         screens: [
-          { name: "Perfil público", status: "Pendiente", url: "#" },
-          { name: "Elegir monto", status: "Pendiente", url: "#" },
-          { name: "Confirmar propina", status: "Pendiente", url: "#" },
-          { name: "Agradecimiento", status: "Pendiente", url: "#" }
+          { name: "Perfil público", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
+          { name: "Elegir monto", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
+          { name: "Confirmar propina", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
+          { name: "Agradecimiento y estrellas", status: "En progreso", url: "etapa-8-recibir-propinas.html" }
         ]
       },
       {
