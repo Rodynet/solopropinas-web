@@ -7,7 +7,7 @@ Versión funcional: 2 de agosto de 2026. Este documento define requerimientos pa
 1. El cliente elige una propina voluntaria para un trabajador identificado.
 2. SoloPropinas informa por separado:
    - propina voluntaria;
-   - servicio SoloPropinas inicial del 0,9% de la propina;
+   - servicio SoloPropinas inicial del 5% de la propina;
    - impuestos aplicables al servicio;
    - total a pagar;
    - importe íntegro que recibirá el trabajador.
@@ -18,11 +18,19 @@ Versión funcional: 2 de agosto de 2026. Este documento define requerimientos pa
 
 ## 2. Modelo obligatorio de integración con el PSP
 
-La integración preferida es una operación con asignaciones separadas o *split payment*:
+La integración obligatoria es una única autorización del cliente con asignaciones separadas o *split payment*. El flujo técnico debe ser:
+
+1. SoloPropinas calcula en backend propina, servicio del 5%, impuestos y total.
+2. El cliente autoriza el total una sola vez en el medio elegido.
+3. El PSP crea y registra simultáneamente dos asignaciones:
 
 - asignación 1: propina completa a la cuenta verificada del trabajador;
-- asignación 2: servicio del 0,9% e impuestos a la cuenta de SoloPropinas;
-- identificadores y conciliación separados para cada concepto.
+- asignación 2: servicio del 5% e impuestos a la cuenta de SoloPropinas;
+- costos del PSP: registro separado según contrato, sin reducir la propina mostrada;
+- identificadores y conciliación separados para cada concepto y acreditación.
+
+4. El webhook informa el estado de la operación y de cada asignación.
+5. SoloPropinas marca “acreditada” únicamente cuando verifica la asignación de la propina al trabajador.
 
 El PSP debe demostrar contractualmente y mediante pruebas que SoloPropinas nunca toma posesión de la propina. Si un proveedor no admite acreditación directa, separación de conceptos, estados verificables, reversos y conciliación, no es compatible con este modelo.
 
@@ -46,7 +54,7 @@ Mercado Pago, Naranja X, Ualá y la wallet del celular son opciones de pago visi
 
 ### 4.1 Creación de la orden
 
-El backend calcula los importes. El navegador nunca define el 0,9% ni el total definitivo.
+El backend calcula los importes. El navegador nunca define el 5% ni el total definitivo.
 
 La orden debe registrar como mínimo:
 
@@ -99,7 +107,7 @@ Abrir una wallet, volver a SoloPropinas o recibir un parámetro del navegador nu
 
 ### 5.1 Qué se factura
 
-SoloPropinas emite factura electrónica exclusivamente por el servicio del 0,9% y sus impuestos. La propina debe aparecer únicamente como referencia informativa y nunca como concepto facturado por SoloPropinas.
+SoloPropinas emite factura electrónica exclusivamente por el servicio del 5% y sus impuestos. La propina debe aparecer únicamente como referencia informativa y nunca como concepto facturado por SoloPropinas.
 
 ### 5.2 Emisión predeterminada
 

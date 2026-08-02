@@ -12,14 +12,14 @@ SoloPropinas es una plataforma tecnológica para trabajadores de servicios. La i
 2. El producto está dirigido a cualquier trabajador de servicios cuya actividad pueda beneficiarse de identidad, reconocimiento, herramientas y propinas voluntarias.
 3. La propina pertenece íntegramente al trabajador. SoloPropinas no la recibe, custodia, distribuye, compensa, retiene ni descuenta.
 4. Un PSP regulado procesa la orden y acredita directamente en la cuenta verificada del trabajador, según sus tiempos y condiciones.
-5. El cliente paga a SoloPropinas un servicio tecnológico separado por facilitar la experiencia y orquestar técnicamente la entrega del saldo. El valor inicial definido es el 0,9% de la propina; el porcentaje y su importe se muestran juntos antes de confirmar. Los impuestos y el comprobante se informan separadamente y el servicio nunca reduce la propina.
+5. El cliente paga a SoloPropinas un servicio tecnológico separado por facilitar la experiencia y orquestar técnicamente la entrega del saldo. El valor inicial definido es el 5% de la propina; el porcentaje y su importe se muestran juntos antes de confirmar. Los impuestos y el comprobante se informan separadamente y el servicio nunca reduce la propina.
 6. SoloPropinas factura únicamente su servicio tecnológico. La propina no es precio, ingreso ni base de facturación de SoloPropinas.
 7. Ninguna pantalla garantiza acreditación inmediata. Los estados son pendiente, acreditado o rechazado y deben ser trazables.
 8. La identidad legal, mayoría de edad y titularidad del destino de cobro se verifican de forma proporcional al riesgo.
 9. Cambiar el destino de cobro exige reautenticación, espera de seguridad, avisos al canal anterior y nuevo, registro de auditoría y bloqueo de emergencia.
 10. El perfil es público solo con consentimiento informado. Las fotos laborales son la opción predeterminada; terceros y menores requieren protección reforzada.
 11. La IA puede preguntar, sugerir y mejorar una descripción, pero nunca publica por sí sola. El trabajador revisa, edita y confirma la versión final.
-12. Las reseñas provienen de experiencias verificadas e incluyen réplica, denuncia, moderación y separación entre persona y establecimiento.
+12. Las estrellas y reseñas se integran en la etapa de reputación desde Google Places API o Business Profile API. Corresponden al establecimiento y nunca deben presentarse como calificación personal del trabajador. SoloPropinas no genera reseñas propias a partir de una propina.
 13. SoloPropinas no crea una relación laboral, no dirige la actividad y requiere autorización para asociar marcas o establecimientos.
 14. Las funciones de equipo, reparto o fondo común permanecen fuera de alcance hasta resolver titularidad, mandato, auditoría, PSP y acuerdos.
 15. No se habilitan pagos reales sin PSP contratado, contratos versionados, facturación, privacidad, soporte, conciliación, respuesta a incidentes y pruebas de seguridad.

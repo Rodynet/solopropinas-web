@@ -476,10 +476,10 @@
           "Las fotos y el mensaje presentan la propina como agradecimiento a una persona, no como el uso de una aplicación.",
           "La vista para el cliente no muestra recomendaciones operativas: puede maximizarse y ocupar toda la pantalla del celular."
         ],
-        developerRequest: "Implementar un espacio de trabajo con pestañas permanentes Mi QR y Turno. Agregar Mostrar en pantalla completa: debe ocultar navegación, instrucciones y controles, ampliar el QR y mostrar ← Volver para minimizar. Turno debe mostrar dinero, propinas, estrellas y misiones expresadas por cantidad de usos, sin atarlo a una actividad específica.",
+        developerRequest: "Implementar un espacio de trabajo con pestañas permanentes Mi QR y Turno. Agregar Mostrar en pantalla completa: debe ocultar navegación, instrucciones y controles, ampliar el QR y mostrar ← Volver para minimizar. Turno debe mostrar dinero recibido, cantidad, promedio y misiones expresadas por cantidad de usos. No solicitar ni mostrar estrellas en esta etapa.",
         screens: [
           { name: "Mi QR personal", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" },
-          { name: "Turno: resultados, estrellas y misiones", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" }
+          { name: "Turno: resultados y misiones", status: "Publicado", url: "etapa-7-comenzar-cobrar.html" }
         ]
       },
       {
@@ -491,35 +491,42 @@
           "La identidad del trabajador aparece antes que el monto: la propina se presenta como reconocimiento personal.",
           "El cliente puede completar el recorrido sin registrarse y pagar con su banco o billetera.",
           "La propina llega completa al trabajador mediante el PSP; SoloPropinas no descuenta comisión de ese importe.",
-          "El cliente paga por separado un servicio inicial del 0,9% de la propina para entregar ese saldo al trabajador.",
+          "El cliente paga por separado un servicio inicial del 5% de la propina para entregar ese saldo al trabajador.",
           "El porcentaje y su importe deben verse juntos para dejar claro que el costo es proporcional y no fijo.",
-          "No se utiliza checkbox: al continuar, el cliente confirma la propina, el 0,9% y el total informado.",
+          "No se utiliza checkbox: al continuar, el cliente confirma la propina, el 5% y el total informado.",
           "Después del resumen puede elegir Mercado Pago, Naranja X, Ualá o la wallet del celular.",
           "Después de la acreditación se muestran por separado el comprobante del proveedor y la factura de SoloPropinas por el servicio.",
           "La factura se emite inicialmente a Consumidor Final y puede descargarse desde la operación.",
           "Si el cliente necesita otros datos fiscales, debe acceder al procedimiento de Información legal y facturación.",
           "La tarifa, los impuestos, el total y el importe que recibe el trabajador deben verse antes de confirmar.",
-          "Las estrellas son opcionales y se solicitan solamente cuando el PSP informa acreditación."
+          "Esta etapa termina con el estado del pago y los comprobantes; no solicita estrellas ni reseñas."
         ],
-        developerRequest: "Implementar el recorrido público sin registro obligatorio: perfil del trabajador, propina voluntaria y desglose de propina, servicio SoloPropinas inicial del 0,9%, impuestos y total. Reemplazar el checkbox por una leyenda que indique que la acción confirma los importes. Luego ofrecer Mercado Pago, Naranja X, Ualá y wallet del celular. Integrar mediante acreditación directa o split, con cálculo en backend, idempotencia, webhook firmado, conciliación y reversos. Tras la acreditación mostrar el comprobante del proveedor y permitir descargar la factura de SoloPropinas emitida a Consumidor Final por el servicio. Vincular a Legales para solicitar otros datos fiscales.",
+        developerRequest: "Implementar el recorrido público sin registro obligatorio: perfil del trabajador, propina voluntaria y desglose de propina, servicio SoloPropinas inicial del 5%, impuestos y total. Reemplazar el checkbox por una leyenda que indique que la acción confirma los importes. Luego ofrecer Mercado Pago, Naranja X, Ualá y wallet del celular. Integrar mediante acreditación directa o split, con cálculo en backend, idempotencia, webhook firmado, conciliación y reversos. Tras la acreditación mostrar el comprobante del proveedor y permitir descargar la factura de SoloPropinas emitida a Consumidor Final por el servicio. Vincular a Legales para solicitar otros datos fiscales.",
         screens: [
           { name: "Perfil público", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Elegir monto", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Confirmar propina", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
           { name: "Elegir medio de pago", status: "En progreso", url: "etapa-8-recibir-propinas.html" },
-          { name: "Agradecimiento y estrellas", status: "En progreso", url: "etapa-8-recibir-propinas.html" }
+          { name: "Estado y comprobantes", status: "En progreso", url: "etapa-8-recibir-propinas.html" }
         ]
       },
       {
         title: "Construir prestigio", icon: "★",
-        stageStatus: "Pendiente de definición",
-        objective: "Transformar cada buena experiencia en reconocimiento.",
-        observations: ["Definir reglas de publicación, moderación y asociación de reseñas con personas y locales."],
-        developerRequest: "Especificar solicitud de reseñas, reputación, comentarios, moderación y compartir logros. Incluir estados vacíos, privacidad, denuncias y maqueta responsive.",
+        stageStatus: "Maqueta inicial",
+        objective: "Mostrar reputación pública verificable de los lugares asociados al trabajador.",
+        observations: [
+          "Las estrellas y reseñas no se generan dentro de SoloPropinas ni después del pago.",
+          "Places API permite obtener rating y una cantidad limitada de reseñas públicas mediante el Place ID.",
+          "Business Profile API requiere autorización OAuth del propietario o administrador del perfil y acceso aprobado por Google.",
+          "La reputación de Google corresponde al establecimiento, no al trabajador individual; debe rotularse claramente.",
+          "No atribuir una reseña del lugar a una persona salvo que exista una regla y evidencia expresamente validada.",
+          "Conservar atribuciones, enlaces, políticas de visualización y límites de almacenamiento exigidos por Google."
+        ],
+        developerRequest: "Implementar reputación en una etapa separada usando Place ID estable. Para información pública, consultar Places API con FieldMask de rating, userRatingCount y reviews disponibles. Para perfiles administrados, integrar Business Profile API con OAuth, consentimiento del propietario y acceso aprobado por Google. Mostrar siempre “Reputación del lugar en Google”, nunca presentarla como calificación personal del trabajador. No crear reseñas ni estrellas propias desde una propina.",
         screens: [
-          { name: "Solicitar reseña", status: "Pendiente", url: "#" },
-          { name: "Perfil y reputación", status: "Pendiente", url: "#" },
-          { name: "Compartir logros", status: "Pendiente", url: "#" }
+          { name: "Vincular perfil del lugar en Google", status: "En progreso", url: "etapa-9-reputacion-google.html" },
+          { name: "Reputación del lugar en Google", status: "En progreso", url: "etapa-9-reputacion-google.html" },
+          { name: "Reseñas públicas y atribución", status: "En progreso", url: "etapa-9-reputacion-google.html" }
         ]
       },
       {

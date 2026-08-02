@@ -34,7 +34,7 @@ Versión: 2 de agosto de 2026.
 - Orden interna e idempotencia.
 - Consentimiento y versión de términos.
 - Identificadores del PSP y estados recibidos.
-- Importe de propina, servicio 0,9%, impuestos y total.
+- Importe de propina, servicio 5%, impuestos y total.
 - Evidencia de acreditación al trabajador.
 - Factura SoloPropinas y comprobante del PSP.
 - Reclamos, reversos, ajustes y responsables.

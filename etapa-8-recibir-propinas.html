@@ -64,8 +64,8 @@
 <strong id="tip">$1.500</strong>
 </div>
 <div class="row">
-<span>Servicio SoloPropinas · 0,9%</span>
-<strong id="fee">$14</strong>
+<span>Servicio SoloPropinas · 5%</span>
+<strong id="fee">$75</strong>
 </div>
 <div class="row">
 <span>Impuestos del servicio</span>
@@ -73,7 +73,7 @@
 </div>
 <div class="row total">
 <span>Total a pagar</span>
-<strong id="total">$1.514*</strong>
+<strong id="total">$1.575*</strong>
 </div>
 <div class="row">
 <span>Juan recibe</span>
@@ -81,14 +81,13 @@
 </div>
 </div>
 <div class="separate">
-<strong>El servicio es siempre proporcional: 0,9% de la propina.</strong>
-<br>Si la propina es menor, el costo también es menor. Lo paga el cliente por separado y nunca se descuenta de lo que recibe Juan.</div>
-<button class="primary" data-next="payment">Aceptar y elegir cómo pagar</button>
-<p style="margin:8px 4px 0;color:var(--muted);font-size:8.5px;text-align:center">Al continuar confirmás la propina voluntaria, el servicio del 0,9% y el total informado.</p>
+<strong>El servicio es siempre proporcional: 5% de la propina.</strong>
+<br>Lo paga el cliente por separado y nunca se descuenta de lo que recibe Juan.</div>
+<button class="primary" data-next="payment">Elegir cómo pagar</button>
+<p style="margin:8px 4px 0;color:var(--muted);font-size:8.5px;text-align:center">Al continuar confirmás la propina voluntaria, el servicio del 5% y el total informado.</p>
 <button class="secondary" data-next="amount">Cancelar</button>
 </section>
 <section class="screen" id="payment">
-<button class="back" data-next="confirm">← Volver al detalle</button>
 <h2>¿Cómo querés pagar?</h2>
 <p class="lead">Elegí la aplicación que usás. Los tiempos de acreditación dependen del proveedor seleccionado.</p>
 <div style="display:grid;gap:8px">
@@ -118,18 +117,6 @@
 <a href="factura-solopropinas-ejemplo.html" download style="display:block;margin-top:8px;color:var(--g);font-size:10px;font-weight:850">Descargar factura de SoloPropinas →</a>
 <p style="margin:9px 0 0;color:var(--muted);font-size:8px">Se emite a Consumidor Final. Si necesitás otros datos fiscales, consultá <a href="legales.html#facturacion" style="color:var(--g);font-weight:800">Información legal y facturación</a>.</p>
 </div>
-<button class="secondary" data-next="confirm">Volver al detalle</button>
-<div class="rating" id="rating" hidden>
-<strong>¿Cómo fue la atención de Juan?</strong>
-<div class="stars">
-<button>★</button>
-<button>★</button>
-<button>★</button>
-<button>★</button>
-<button>★</button>
-</div>
-<p class="lead">Opcional. Solo una valoración por experiencia verificada.</p>
-</div>
 </section>
 </div>
 </div>
@@ -141,14 +128,14 @@
 <h1>Etapa 8 · Propina, servicio y medio de pago</h1>
 <div class="decision">
 <strong>Definición central</strong>
-<p>La propina pertenece íntegramente al trabajador. El cliente paga un servicio separado equivalente inicialmente al 0,9% de la propina. El proveedor elegido procesa y acredita directamente; SoloPropinas no custodia fondos.</p>
+<p>La propina pertenece íntegramente al trabajador. El cliente paga un servicio separado equivalente inicialmente al 5% de la propina. El proveedor elegido procesa y acredita directamente; SoloPropinas no custodia fondos.</p>
 </div>
 <div class="grid">
 <article class="card">
 <h2>Checkout</h2>
 <ul>
 <li>Mostrar trabajador, actividad y lugar.</li>
-<li>Separar propina, servicio SoloPropinas del 0,9%, impuestos y total.</li>
+<li>Separar propina, servicio SoloPropinas del 5%, impuestos y total.</li>
 <li>Mostrar el porcentaje y el importe calculado para comunicar que el costo es proporcional, no fijo.</li>
 <li>Informar el neto del trabajador igual a la propina.</li>
 <li>Reemplazar el checkbox por la leyenda: al continuar confirma los importes informados.</li>
@@ -170,7 +157,7 @@
 <h2>Consumidor</h2>
 <ul>
 <li>Voluntariedad de la propina y precio completo del servicio.</li>
-<li>Consentimiento inequívoco mediante la acción “Aceptar y elegir cómo pagar”.</li>
+<li>Consentimiento inequívoco mediante la acción “Elegir cómo pagar” y la leyenda inmediatamente anterior.</li>
 <li>Datos del proveedor, CUIT, domicilio y reclamos antes de producción.</li>
 <li>Cancelación previa y procedimiento para errores/reversos.</li>
 <li>Número de caso y coordinación trazable con el proveedor.</li>
@@ -179,18 +166,22 @@
 <article class="card">
 <h2>Integración PSP</h2>
 <ul>
-<li>Exigir acreditación directa o split: propina completa al trabajador y servicio a SoloPropinas.</li>
+<li>El cliente autoriza un total compuesto por propina + servicio del 5% + impuestos.</li>
+<li>En la misma operación, el PSP debe crear dos asignaciones contables y de liquidación.</li>
+<li>Asignación A: el 100% de la propina se acredita directamente en la cuenta verificada del trabajador.</li>
+<li>Asignación B: el 5% y sus impuestos se acreditan en la cuenta de SoloPropinas.</li>
+<li>Los costos propios del PSP se registran por separado según el contrato; nunca reducen la propina informada al trabajador.</li>
 <li>Solo el backend calcula importes y crea la orden con idempotencia.</li>
 <li>Confirmar éxito únicamente mediante webhook firmado o consulta verificada.</li>
-<li>Guardar identificadores separados de orden, pago, asignación y acreditación.</li>
+<li>Guardar identificadores separados de orden, pago, asignación A, asignación B y cada acreditación.</li>
 <li>Conciliar diariamente propina, servicio, impuestos, costos y factura.</li>
-<li>No integrar un proveedor que obligue a SoloPropinas a custodiar la propina.</li>
+<li>Rechazar la integración si el PSP no garantiza el split o si obliga a SoloPropinas a recibir o custodiar la propina.</li>
 </ul>
 </article>
 <article class="card">
 <h2>Facturación</h2>
 <ul>
-<li>Facturar únicamente el servicio del 0,9% y sus impuestos.</li>
+<li>Facturar únicamente el servicio del 5% y sus impuestos.</li>
 <li>Emitir a Consumidor Final cuando la normativa y el importe lo permitan.</li>
 <li>Vincular factura, orden interna, pago PSP y comprobante.</li>
 <li>Mostrar “Descargar factura de SoloPropinas” después de la acreditación.</li>
@@ -199,20 +190,11 @@
 <li>Las facturas autorizadas se ajustan con el procedimiento fiscal correspondiente; no se editan directamente.</li>
 </ul>
 </article>
-<article class="card">
-<h2>Reputación</h2>
-<ul>
-<li>Estrellas solo después de acreditación confirmada.</li>
-<li>Una reseña por operación verificada.</li>
-<li>Opcional, con réplica, denuncia y moderación.</li>
-<li>Separar trabajador y establecimiento.</li>
-</ul>
-</article>
 <article class="card wide">
 <h2>Criterios de aceptación</h2>
 <ul>
 <li>El cliente sabe a quién pertenece la propina, quién procesa y qué cobra SoloPropinas.</li>
-<li>El 0,9% y su importe son visibles antes de aceptar.</li>
+<li>El 5% y su importe son visibles antes de aceptar.</li>
 <li>El trabajador recibe íntegramente la propina.</li>
 <li>El cliente puede elegir uno de los cuatro medios definidos.</li>
 <li>Luego de la acreditación puede descargar la factura de SoloPropinas.</li>
@@ -233,7 +215,7 @@ function show(id){screens.forEach(x=>document.querySelector('#'+x).classList.tog
 document.querySelector('#label').textContent=labels[id]}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.next)));
 let amount=1500,selectedProvider='';
 const money=n=>'$'+new Intl.NumberFormat('es-AR').format(n);
-function serviceFee(){return Math.round(amount*.009)}function update(){const fee=serviceFee();
+function serviceFee(){return Math.round(amount*.05)}function update(){const fee=serviceFee();
 document.querySelector('#tip').textContent=money(amount);
 document.querySelector('#fee').textContent=money(fee);
 document.querySelector('#total').textContent=money(amount+fee)+'*';
@@ -249,20 +231,17 @@ update()}});
 document.querySelectorAll('.pay-option').forEach(b=>b.addEventListener('click',()=>{selectedProvider=b.dataset.pay;
 show('status');
 setState('pending')}));
-function setState(state){const screen=document.querySelector('#status'),icon=document.querySelector('#statusIcon'),title=document.querySelector('#statusTitle'),copy=document.querySelector('#statusCopy'),rating=document.querySelector('#rating'),documents=document.querySelector('#documents');
+function setState(state){const screen=document.querySelector('#status'),icon=document.querySelector('#statusIcon'),title=document.querySelector('#statusTitle'),copy=document.querySelector('#statusCopy'),documents=document.querySelector('#documents');
 screen.className='screen active center '+state;
-rating.hidden=true;
 documents.hidden=true;
 if(state==='pending'){icon.textContent='…';
 title.textContent='Pago pendiente';
 copy.textContent=`${selectedProvider} está verificando la operación. La propina todavía no fue informada como acreditada.`}if(state==='success'){icon.textContent='✓';
 title.textContent='Propina acreditada';
-copy.textContent=`${selectedProvider} confirmó ${money(amount)} acreditados directamente a Juan. El servicio SoloPropinas del 0,9% tiene una factura separada.`;
-rating.hidden=false;
+copy.textContent=`${selectedProvider} confirmó ${money(amount)} acreditados directamente a Juan. El servicio SoloPropinas del 5% tiene una factura separada.`;
 documents.hidden=false}if(state==='rejected'){icon.textContent='!';
 title.textContent='El pago no se realizó';
 copy.textContent=`${selectedProvider} rechazó la operación. No se acreditó la propina ni se cobró el servicio. Podés intentar nuevamente.`}}document.querySelectorAll('[data-state]').forEach(b=>b.addEventListener('click',()=>setState(b.dataset.state)));
-document.querySelectorAll('.stars button').forEach((b,i,all)=>b.addEventListener('click',()=>all.forEach((x,j)=>x.classList.toggle('active',j<=i))));
 update();
 
 </script>
