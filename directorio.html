@@ -518,14 +518,16 @@
         observations: [
           "Después de una propina acreditada, el cliente puede puntuar la atención de la persona con un toque.",
           "Esa puntuación es una métrica interna de SoloPropinas: no se publica en Google ni se presenta como reseña pública.",
+          "El trabajador consulta en privado su promedio, distribución de 1 a 5 y porcentaje de valoraciones positivas, neutras y negativas.",
           "La opinión sobre el lugar se deriva a su ficha correcta de Google usando el Place ID; el cliente confirma la publicación dentro de Google.",
           "Una persona puede trabajar en varios lugares: cada relación conserva su Place ID y su enlace oficial de reseñas. El cliente puede elegir uno o más lugares al dejar su opinión.",
           "No mezclar las estrellas de Google del establecimiento con la métrica de atención de la persona.",
           "Conservar atribuciones, enlaces, políticas de visualización y límites de almacenamiento exigidos por Google."
         ],
-        developerRequest: "Después de una propina acreditada, implementar una valoración interna de 1 a 5 estrellas sobre la atención del trabajador, en un solo toque, sin registro ni texto obligatorio. Guardarla como métrica privada ligada a orden, trabajador y fecha, con límites contra duplicados. Modelar la relación trabajador-lugar con Place ID y enlace oficial de reseñas por lugar. El cliente puede elegir uno o más de esos lugares y cada botón debe abrir su enlace oficial de Google, previamente registrado —sin abrir búsquedas ni mapas genéricos—. SoloPropinas no publica reseñas por el cliente; Google pide autenticación y confirmación. Separar estrictamente la métrica personal interna de las estrellas públicas del establecimiento.",
+        developerRequest: "Después de una propina acreditada, implementar una valoración interna de 1 a 5 estrellas sobre la atención del trabajador, en un solo toque, sin registro ni texto obligatorio. Guardarla como métrica privada ligada a orden, trabajador y fecha, con límites contra duplicados. Crear una vista privada estilo distribución de Google: promedio, total de valoraciones, barras de 1 a 5 y porcentajes positivas (4–5), neutras (3) y negativas (1–2), con filtros por período y luego por lugar. Modelar la relación trabajador-lugar con Place ID y enlace oficial de reseñas por lugar. El cliente puede elegir uno o más de esos lugares y cada botón debe abrir su enlace oficial de Google, previamente registrado —sin abrir búsquedas ni mapas genéricos—. SoloPropinas no publica reseñas por el cliente; Google pide autenticación y confirmación. Separar estrictamente la métrica personal interna de las estrellas públicas del establecimiento.",
         screens: [
           { name: "Valorar atención de la persona", status: "Publicado", url: "etapa-9-reputacion-google.html" },
+          { name: "Promedio y distribución de atención", status: "Publicado", url: "etapa-9-reputacion-google.html" },
           { name: "Elegir lugares para opinar", status: "Publicado", url: "etapa-9-reputacion-google.html" },
           { name: "Opinar sobre el lugar en Google", status: "Publicado", url: "etapa-9-reputacion-google.html" }
         ]
