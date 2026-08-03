@@ -245,6 +245,8 @@
       <div class="nav-links">
         <a href="#recorrido">Recorrido</a>
         <a href="#directorio">Pantallas</a>
+        <a href="product-constitution.html">Product Constitution</a>
+        <a href="solicitud-requerimiento-desarrollo.html">Requerimientos</a>
         <a class="button" href="#directorio">Ver directorio</a>
       </div>
     </nav>
@@ -258,6 +260,8 @@
       <div class="hero-actions">
         <a class="button" href="#recorrido">Explorar el recorrido ↓</a>
         <a class="button secondary" href="#directorio">Consultar pantallas</a>
+        <a class="button secondary" href="product-constitution.html">Product Constitution</a>
+        <a class="button secondary" href="solicitud-requerimiento-desarrollo.html">Solicitud a desarrollo</a>
       </div>
       <aside class="principle" aria-label="Principio central del producto">
         <div class="principle-icon" aria-hidden="true">⌁</div>
@@ -271,6 +275,18 @@
     <section aria-label="Resumen del proyecto">
       <div class="container">
         <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <section aria-label="Documentos del producto">
+      <div class="container">
+        <div class="principle">
+          <div class="principle-icon" aria-hidden="true">↗</div>
+          <div>
+            <strong>Documentos de referencia</strong>
+            <p><a href="product-constitution.html">Product Constitution</a> · principios que no se negocian. &nbsp; <a href="solicitud-requerimiento-desarrollo.html">Solicitud de requerimiento a desarrollo</a> · alcance funcional, técnico, administrativo y de prevención de fraude.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -534,16 +550,16 @@
       },
       {
         title: "Administrar mi cuenta", icon: "⚙",
-        stageStatus: "Pendiente de definición",
-        objective: "Controlar movimientos, perfil y preferencias desde un lugar.",
-        observations: ["Definir métricas principales, períodos del historial y permisos para cambios sensibles."],
-        developerRequest: "Especificar panel, historial, edición de perfil, cambio seguro de cuenta de cobro y configuración. Incluir filtros, estados, confirmaciones, seguridad y recuperación.",
+        stageStatus: "En diseño",
+        objective: "Administrar la cuenta, los lugares de trabajo y los datos personales sin afectar el QR permanente.",
+        observations: ["El panel reúne perfil, lugares, cobro, QR, seguridad y ayuda.", "Los lugares de trabajo requieren ABM completo: crear, consultar, editar, desactivar y eliminar de forma recuperable.", "Ningún cambio se confirma con datos vacíos: cada pantalla indica el dato requerido, confirma lo seleccionado y comunica el resultado.", "Un trabajador puede tener varios lugares activos; cada uno conserva su Place ID y queda listo para la evaluación de la etapa 9.", "Modificar o quitar un lugar no modifica el QR, que siempre representa a la persona.", "Los cambios de destino de cobro requieren verificación y auditoría.", "La plataforma debe prevenir que SoloPropinas se use para cobros ajenos a una propina mediante controles de riesgo, revisión administrativa y bloqueos proporcionales."],
+        developerRequest: "Implementar panel de cuenta con ABM completo de la relación trabajador-lugar. Cada circuito debe validar datos obligatorios y finalizar en una confirmación, error recuperable o estado de revisión. Buscar y confirmar cada lugar por Google Places API desde backend; guardar Place ID, nombre canónico, dirección, enlace directo de reseñas, estado, fecha de validación y auditoría. Permitir varios lugares activos, evitar duplicados, desactivar o eliminar con confirmación y conservar historial. Incluir ABM de perfil, fotos, descripción, preferencias, teléfono, destino de cobro y QR. El QR es personal y no se reemplaza por estos cambios. Definir permisos, verificación de cambios sensibles, recuperación, estados vacíos, errores y trazabilidad. Implementar prevención de uso indebido: controles en tiempo real por QR, pagador, dispositivo, medio de pago, IP, frecuencia, importes, autooperaciones, vínculos repetidos, reintentos y cambios recientes; conciliación diaria con PSP, revisión semanal de alertas y revalidación mensual de identidad, cobro y lugares. Definir score de riesgo, límites, retenciones, suspensión, apelación, auditoría y resolución administrativa con evidencia; no asumir acreditación ni reverso fuera del PSP.",
         screens: [
-          { name: "Panel principal", status: "Pendiente", url: "#" },
-          { name: "Historial de propinas", status: "Pendiente", url: "#" },
-          { name: "Editar perfil", status: "Pendiente", url: "#" },
-          { name: "Cambiar cuenta de cobro", status: "Pendiente", url: "#" },
-          { name: "Configuración", status: "Pendiente", url: "#" }
+          { name: "Panel principal", status: "Publicado", url: "etapa-10-administrar-cuenta.html" },
+          { name: "Administrar mis lugares", status: "Publicado", url: "etapa-10-administrar-cuenta.html" },
+          { name: "Editar perfil", status: "Publicado", url: "etapa-10-administrar-cuenta.html" },
+          { name: "Cambiar cuenta de cobro", status: "Publicado", url: "etapa-10-administrar-cuenta.html" },
+          { name: "Mi QR, seguridad y ayuda", status: "Publicado", url: "etapa-10-administrar-cuenta.html" }
         ]
       },
       {
